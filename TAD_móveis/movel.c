@@ -9,9 +9,13 @@ struct movel{
 };
 
 Movel adicionar_movel(Movel*a){
-    Movel b;
-
-    return b;
+    a=(Movel*)malloc(sizeof(Movel*));
+    if (a==NULL){
+        printf("Erro de alocação de memória");
+        exit(1);
+    }
+    
+    return a;
 }
 
 void remover_movel(Movel* a){
