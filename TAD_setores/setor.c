@@ -1,4 +1,5 @@
 #include "settings.h"
+#include "setor.h"
 
 struct setor{
     char nome[50];
