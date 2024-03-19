@@ -1,8 +1,10 @@
+#ifndef SETTINGS_H
+#define SETTINGS_H
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "movel.h"
-#include "setor.h"
+
 #define Max 50
 
 //Funções gerais
@@ -15,3 +17,4 @@ void limpa_buffer(void);
 
 
 
+#endif //SETTINGS_H

@@ -1,4 +1,4 @@
-#include "settings.h"
+#include "Setor/setor.c"
 
 int main(void){
     char opcao;
