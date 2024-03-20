@@ -5,12 +5,16 @@
 
 typedef struct movel Movel;
 
-Movel *adicionar_movel(Movel* a);
+Movel* lista_cria_movel(void);
 
-void remover_movel(Movel* a);
+Movel* lista_movel_adiciona_ordenado(Movel* Lista, char nome[], char tipo[], float preco, int qtd_estoque, int v);
 
-//Movel editar_movel(Movel* a, char[Max]);
+int lista_movel_vazia(Movel* a);
 
-void buscar_movel(Movel* a);
+void lista_movel_imprime(Movel*a);
+
+Movel * lista_movel_busca(int elemento, Movel* l);
+
+Movel * lista_movel_retira(Movel*a, char nome[]);
 
 #endif //MOVEL_H

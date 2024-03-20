@@ -1,34 +1,58 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 #include "movel.h"
 
-struct movel{
+#define Max 50
+struct movel {
     char nome[Max];
     char tipo[Max];
-    char descricao[Max];
     float preco;
     int qtd_estoque;
+    int info;
+    struct movel* prox;
 };
 
-Movel *adicionar_movel(Movel*a){
-    a=(Movel*)malloc(sizeof(Movel));
-    if (a==NULL){
-        printf("Erro de alocação de memória");
-        exit(1);
-    }
-    return a;
+typedef struct movel Movel;
+
+Movel* lista_cria_movel(void) {
+    return NULL;
 }
 
-void remover_movel(Movel* a){
+Movel* lista_movel_adiciona_ordenado(Movel* Lista, char nome[], char tipo[], float preco, int qtd_estoque, int v){
+    Movel* novo;
+	Movel* ant = NULL;
+	Movel* p = Lista;
+	while(p!=NULL && strcmp(nome, p->nome) > 0){
+		ant = p;
+		p = p->prox;
+	}
 
+	novo = (Movel*) malloc(sizeof(Movel));
+	novo->info = v;
+	if(ant ==NULL){
+		novo->prox = Lista;
+		Lista = novo;
+	}
+	else {
+		novo->prox = ant-> prox;
+		ant->prox = novo;
+	}
+	return Lista;
+}
+
+int lista_movel_vazia(Movel* a){
 
 }
 
-//Movel editar_movel(Movel* a, char[Max]){
-  //  Movel b;/
- //  return b;
-//}
+void lista_movel_imprime(Movel*a){
 
-void buscar_movel(Movel* a){
-    
-};
+}
 
+Movel * lista_movel_busca(int elemento, Movel* l){
 
+}
+
+Movel * lista_movel_retira(Movel*a, char nome[]){
+
+}
