@@ -5,17 +5,11 @@ Sistema para gerenciamento de loja de moveis:
     cada movel em cada setor deve ter os seguintes atributos: nome, tipo, preço, qt_estoque
 
     menu: 
-        adicionar movel
-        remover
-        editar
-
-        adicionar setor
-        remover
-        
-        listar setores e moveis
-
-        buscar movel
-
-        sair
-
-        
+        1- adicionar movel
+        2- remover movel
+        3- editar movel
+        4- adicionar setor
+        5- remover setor
+        6- listar setores e moveis
+        7- buscar movel
+        8- sair
