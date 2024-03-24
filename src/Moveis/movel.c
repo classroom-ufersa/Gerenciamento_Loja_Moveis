@@ -41,18 +41,21 @@ Movel* lista_movel_adiciona_ordenado(Movel* Lista, char nome[], char tipo[], flo
 	return Lista;
 }
 
-int lista_movel_vazia(Movel* a){
-	return (a==NULL);
+int lista_movel_vazia(Movel* Lista){
+	return (Lista==NULL);
 }
 
-void lista_movel_imprime(Movel* a){
+void lista_movel_imprime(Movel* Lista){
+	Movel*p;
+	for(p=Lista; p!=NULL; p=p->prox){
+		printf(" Info = %d \n", p->info);
+	}
+}
+
+Movel * lista_movel_busca(int elemento, Movel* Lista){
 	
 }
 
-Movel * lista_movel_busca(int elemento, Movel* l){
-
-}
-
-Movel * lista_movel_retira(Movel*a, char nome[]){
+Movel * lista_movel_retira(Movel* Lista, char nome[]){
 
 }
