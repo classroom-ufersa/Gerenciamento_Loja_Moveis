@@ -42,11 +42,11 @@ Movel* lista_movel_adiciona_ordenado(Movel* Lista, char nome[], char tipo[], flo
 }
 
 int lista_movel_vazia(Movel* a){
-
+	return (a==NULL);
 }
 
-void lista_movel_imprime(Movel*a){
-
+void lista_movel_imprime(Movel* a){
+	
 }
 
 Movel * lista_movel_busca(int elemento, Movel* l){
