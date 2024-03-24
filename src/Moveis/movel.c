@@ -53,7 +53,12 @@ void lista_movel_imprime(Movel* Lista){
 }
 
 Movel * lista_movel_busca(int elemento, Movel* Lista){
-	
+	Movel * p;
+	for(p=Lista; p!=NULL; p=p->prox){
+		if(p->info ==elemento)
+			return p;
+	}
+	return NULL;
 }
 
 Movel * lista_movel_retira(Movel* Lista, char nome[]){
