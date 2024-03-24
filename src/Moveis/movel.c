@@ -61,6 +61,20 @@ Movel * lista_movel_busca(int elemento, Movel* Lista){
 	return NULL;
 }
 
-Movel * lista_movel_retira(Movel* Lista, char nome[]){
-
+Movel * lista_movel_retira(Movel* Lista,int v, char nome[]){
+	Movel* ant = NULL;
+    Movel* p = Lista;
+    
+    while(p->info!=v){
+    	if (p==NULL)
+        	return Lista;
+        ant = p;
+        p = p->prox;
+    }
+    if (ant==NULL)
+        Lista = p->prox;
+    else
+        ant->prox = p->prox;
+    free(p);
+    return Lista;
 }
