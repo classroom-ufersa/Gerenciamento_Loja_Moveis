@@ -50,3 +50,20 @@ void lista_setor_libera(Setor* l){
         p = t;
     }
 }
+
+Setor * lista_setor_retira(Setor*a, char nome[]){
+	Setor *ant = NULL; 
+    Setor *p = a;
+    while(p->nome!=nome){
+    	if (p==NULL)
+        	return a;
+        ant = p;
+        p = p->proximo;
+    }
+    if (ant==NULL)
+        a = p->proximo;
+    else
+        ant->proximo = p->proximo;
+    free(p);
+    return a;
+}
