@@ -42,8 +42,8 @@ void menu(void){
     default:
         break;
     }    
-}*/
-
+*/
+}
 void limpa_buffer(void){
 
 };
