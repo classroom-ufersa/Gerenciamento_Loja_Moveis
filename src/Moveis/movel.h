@@ -17,4 +17,6 @@ Movel * lista_movel_busca(int elemento, Movel* l);
 
 Movel * lista_movel_retira(Movel*a, char nome[]);
 
+void lista_movel_libera(Movel* l);
+
 #endif //MOVEL_H

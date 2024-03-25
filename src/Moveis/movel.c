@@ -12,7 +12,7 @@ struct movel {
     struct movel* proximo;
 };
 
-typedef struct movel Movel;
+
 
 Movel* lista_cria_movel(void) {
     return NULL;
@@ -31,8 +31,8 @@ Movel* lista_movel_adiciona_ordenado(Movel* Lista, char nome[], char tipo[], flo
 		printf("Erro de alocação");
 		exit(1);
 	}
-	novo->nome = nome;
-	novo->tipo = nome;
+	strcpy(nome, novo->nome);
+    strcpy(tipo, novo->tipo);
 	novo->preco = preco;
 	novo->qtd_estoque = qtd_estoque;
 	if(anterior ==NULL){
