@@ -57,7 +57,7 @@ void lista_movel_imprime(Movel*a){
 	}
 }
 
-Movel * lista_movel_busca(char nome[], Movel* l){
+Movel *lista_movel_busca(char nome[], Movel* l){
 	Movel *p;
 	for(p=l; p!=NULL; p=p->proximo){
 		if(p->nome==nome){

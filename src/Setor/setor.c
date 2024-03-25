@@ -67,3 +67,10 @@ Setor * lista_setor_retira(Setor*a, char nome[]){
     free(p);
     return a;
 }
+
+void lista_setor_imprime(Setor*a){
+	Setor*p;
+	for(p=a; p!=NULL; p=p->proximo){
+		printf("Nome: %s\n, Descricao: %s\n", p->nome, p->descricao);
+	}
+}

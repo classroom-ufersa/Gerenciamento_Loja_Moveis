@@ -4,6 +4,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <setor.h>
+#include <movel.h>
 
 #define Max 50
 

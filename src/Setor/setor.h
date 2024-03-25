@@ -15,4 +15,6 @@ void lista_setor_libera(Setor* l);
 
 Setor * lista_setor_retira(Setor*a, char nome[]);
 
+void lista_setor_imprime(Setor*a);
+
 #endif //SETOR_H
