@@ -6,8 +6,7 @@ int main(void){
         menu();
         printf("Digite uma opcao:");
         scanf("%c", &opcao);
-        switch (opcao)
-        {
+        switch (opcao){
         case '1': //adicionar movel
             printf("\t\t Adicionar movel\n");
             printf("1 - Adicionar movel a um setor existente\n2 - Criar novo setor\n");
