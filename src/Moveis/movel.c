@@ -27,7 +27,7 @@ Movel* lista_movel_adiciona_ordenado(Movel* Lista, char nome[], char tipo[], flo
 		p = p->proximo;
 	}
 	novo = (Movel*) malloc(sizeof(Movel));
-	if (novo ==NULL){
+	if (novo == NULL){
 		printf("Erro de alocação");
 		exit(1);
 	}
@@ -35,7 +35,7 @@ Movel* lista_movel_adiciona_ordenado(Movel* Lista, char nome[], char tipo[], flo
     strcpy(novo->tipo,tipo);
 	novo->preco = preco;
 	novo->qtd_estoque = qtd_estoque;
-	if(anterior ==NULL){
+	if(anterior == NULL){
 		novo->proximo = Lista;
 		Lista = novo;
 	}
@@ -52,7 +52,7 @@ int lista_movel_vazia(Movel* l){
 
 void lista_movel_imprime(Movel*l){
 	Movel*p;
-	for(p=l; p!=NULL; p=p->proximo){
+	for(p = l; p != NULL; p = p->proximo){
 		printf("Nome: %s\t\tPreco: %.2f\t\tTipo: %s\t\tQuantidade em estoque:%d\n", p->nome, p->preco,p->tipo, p->qtd_estoque);
 	}
 }

@@ -20,13 +20,13 @@ Setor* lista_setor_adiciona_ordenado(Setor* Lista, char nome[], char descricao[]
 		p = p->proximo;
 	}
 	novo = (Setor*) malloc(sizeof(Setor));
-	if (novo ==NULL){
+	if (novo == NULL){
 		printf("Erro de alocação");
 		exit(1);
 	}
-	strcpy(nome, novo->nome);
-    strcpy(descricao, novo->descricao);
-	if(anterior ==NULL){
+	strcpy(novo->nome, nome);
+    strcpy(novo->descricao, descricao);
+	if(anterior == NULL){
 		novo->proximo = Lista;
 		Lista = novo;
 	}
@@ -52,25 +52,25 @@ void lista_setor_libera(Setor* l){
 }
 
 Setor * lista_setor_retira(Setor*a, char nome[]){
-	Setor *ant = NULL; 
+	Setor *anterior = NULL; 
     Setor *p = a;
-    while(p->nome!=nome){
+    while(strcmp(p->nome, nome) !=0){
     	if (p==NULL)
         	return a;
-        ant = p;
+        anterior = p;
         p = p->proximo;
     }
-    if (ant==NULL)
+    if (anterior==NULL)
         a = p->proximo;
     else
-        ant->proximo = p->proximo;
+        anterior->proximo = p->proximo;
     free(p);
     return a;
 }
 
 void lista_setor_imprime(Setor*a){
 	Setor*p;
-	for(p=a; p!=NULL; p=p->proximo){
-		printf("Nome: %s\n, Descricao: %s\n", p->nome, p->descricao);
+	for(p = a; p != NULL; p = p ->proximo){
+		printf("Nome: %s\t\t Descricao: %s\n", p->nome, p->descricao);
 	}
 }
