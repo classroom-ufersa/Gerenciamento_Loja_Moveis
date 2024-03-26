@@ -14,7 +14,7 @@ struct movel {
 
 
 
-Movel* lista_cria_movel(void) {
+Movel* lista_movel_cria(void) {
     return NULL;
 }
 
@@ -46,14 +46,14 @@ Movel* lista_movel_adiciona_ordenado(Movel* Lista, char nome[], char tipo[], flo
 	return Lista;
 }
 
-int lista_movel_vazia(Movel* a){
-	return (a==NULL);
+int lista_movel_vazia(Movel* l){
+	return (l==NULL);
 }
 
-void lista_movel_imprime(Movel*a){
+void lista_movel_imprime(Movel*l){
 	Movel*p;
-	for(p=a; p!=NULL; p=p->proximo){
-		printf("Nome: %s\t\tPreco: %f\t\tTipo: %s\t\tQuantidade em estoque:%d\n", p->nome, p->preco,p->tipo, p->qtd_estoque);
+	for(p=l; p!=NULL; p=p->proximo){
+		printf("Nome: %s\t\tPreco: %.2f\t\tTipo: %s\t\tQuantidade em estoque:%d\n", p->nome, p->preco,p->tipo, p->qtd_estoque);
 	}
 }
 
@@ -67,24 +67,24 @@ Movel *lista_movel_busca(char nome[], Movel* l){
 	return NULL;
 }
 
-Movel * lista_movel_retira(Movel*a, char nome[]){
+Movel *lista_movel_retira(Movel*l, char nome[]){
 	Movel* anterior = NULL; 
-    Movel* p = a;
-    while(strcmp(a->nome, nome)!=0){
+    Movel* p = l;
+    while(strcmp(p->nome,nome)!=0){
     	if (p==NULL){
-        	return a;
+        	return l;
 		}
         anterior = p;
         p = p->proximo;
     }
     if (anterior==NULL){
-        a = p->proximo;
+        l = p->proximo;
 	}	
     else {
         anterior->proximo = p->proximo;
 	}
     free(p);
-    return a;
+    return l;
 } //arrumar
 
 void lista_movel_libera(Movel** l){
