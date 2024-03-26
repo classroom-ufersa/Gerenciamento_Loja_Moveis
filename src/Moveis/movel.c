@@ -31,8 +31,8 @@ Movel* lista_movel_adiciona_ordenado(Movel* Lista, char nome[], char tipo[], flo
 		printf("Erro de alocação");
 		exit(1);
 	}
-	strcpy(nome, novo->nome);
-    strcpy(tipo, novo->tipo);
+	strcpy(novo->nome,nome);
+    strcpy(novo->tipo,tipo);
 	novo->preco = preco;
 	novo->qtd_estoque = qtd_estoque;
 	if(anterior ==NULL){
@@ -60,7 +60,7 @@ void lista_movel_imprime(Movel*a){
 Movel *lista_movel_busca(char nome[], Movel* l){
 	Movel *p;
 	for(p=l; p!=NULL; p=p->proximo){
-		if(p->nome==nome){
+		if(strcmp(nome, p->nome) == 0){
 			return p;
 			}
 	}
@@ -68,24 +68,27 @@ Movel *lista_movel_busca(char nome[], Movel* l){
 }
 
 Movel * lista_movel_retira(Movel*a, char nome[]){
-	Movel* ant = NULL; 
+	Movel* anterior = NULL; 
     Movel* p = a;
-    while(p->nome!=nome){
-    	if (p==NULL)
+    while(strcmp(a->nome, nome)!=0){
+    	if (p==NULL){
         	return a;
-        ant = p;
+		}
+        anterior = p;
         p = p->proximo;
     }
-    if (ant==NULL)
+    if (anterior==NULL){
         a = p->proximo;
-    else
-        ant->proximo = p->proximo;
+	}	
+    else {
+        anterior->proximo = p->proximo;
+	}
     free(p);
     return a;
-}
+} //arrumar
 
-void lista_movel_libera(Movel* l){
-    Movel* p = l;
+void lista_movel_libera(Movel** l){
+    Movel* p = *l;
     Movel* t;
     while (p != NULL) {
         t = p->proximo;

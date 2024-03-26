@@ -13,10 +13,8 @@ void menu(void){
     printf("8-Sair\n");
     printf("***************************\n");
 }
-void limpa_buffer(void){
+void limpa_buffer(void){};
 
-};
+void listar(void){};
 
-void listar(void){
-    
-};
+void upper(){};
