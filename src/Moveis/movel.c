@@ -85,11 +85,39 @@ Movel *lista_movel_retira(Movel*l, char nome[]){
 	}
     free(p);
     return l;
-} //arrumar
+} 
+	Movel* lista_movel_edita(Movel* l, char nome_busca[], char nome[], char tipo[], float preco, int qtd_estoque) {
+    
+	Movel *p;
+    Movel *anterior = NULL;
 
-Movel *lista_movel_edita(Movel* l, char nome[], char tipo[], float preco, int qdt_estoque){
-	Movel *p = l;
+    for (p = l; p != NULL; p = p->proximo) {
+        if (strcmp(nome_busca, p->nome) == 0) {
+            strcpy(p->nome, nome);
+            strcpy(p->tipo, tipo);
+            p->preco = preco;
+            p->qtd_estoque = qtd_estoque;
+            return l;        }
+        anterior = p;
+    }
+}
+	/*Movel *p;
+	for (p = l; p == NULL; l->proximo){
+		l->proximo = p;
+		if (strcmp(nome_busca, p->nome) == 0 ){
+			strcpy(p->nome, nome);
+			strcpy(p->tipo, tipo);
+			p->preco = preco;
+			p->qtd_estoque = qdt_estoque;
+		}
+	}
+	return l;
+	/*if (p == NULL){
+		printf("Lista vazia\n");
+		return l;
+	}
 	while(strcmp(p->nome,nome) != 0){
+		l = p;
 		p->proximo;
 	}
 	if (strcmp(p->nome,nome) == 0){
@@ -98,7 +126,8 @@ Movel *lista_movel_edita(Movel* l, char nome[], char tipo[], float preco, int qd
 		p->preco = preco;
 		p->qtd_estoque = qdt_estoque;
 	}
-}
+	return l;*/
+
 void lista_movel_libera(Movel** l){
     Movel* p = *l;
     Movel* t;

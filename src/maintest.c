@@ -9,9 +9,11 @@ int main(void){
     lista_movel_imprime(lista);
     /*Movel *l2 = lista_movel_busca("cba", lista);
     printf("%s", l2->nome);*/ //busca funcionando
-    printf("Lista depois de retirar: \n");
-    lista_movel_retira(lista, "dda");
+    //printf("Lista depois de retirar: \n");
+    //lista_movel_retira(lista, "dda");
+    //lista_movel_imprime(lista);
+    printf("Editando\n");
+    lista_movel_edita(lista, "dda", "zzg", "bansd", 6.43, 10);
     lista_movel_imprime(lista);
-
     return 0;
 }
