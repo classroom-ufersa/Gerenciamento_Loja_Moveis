@@ -19,4 +19,6 @@ Movel * lista_movel_retira(Movel*l, char nome[]);
 
 void lista_movel_libera(Movel** l);
 
+Movel * lista_movel_edita(Movel* l, char nome[], char tipo[], float preco, int qdt_estoque);
+
 #endif //MOVEL_H

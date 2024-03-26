@@ -87,6 +87,18 @@ Movel *lista_movel_retira(Movel*l, char nome[]){
     return l;
 } //arrumar
 
+Movel *lista_movel_edita(Movel* l, char nome[], char tipo[], float preco, int qdt_estoque){
+	Movel *p = l;
+	while(strcmp(p->nome,nome) != 0){
+		p->proximo;
+	}
+	if (strcmp(p->nome,nome) == 0){
+		strcpy(p->nome, nome);
+		strcpy(p->tipo, tipo);
+		p->preco = preco;
+		p->qtd_estoque = qdt_estoque;
+	}
+}
 void lista_movel_libera(Movel** l){
     Movel* p = *l;
     Movel* t;
