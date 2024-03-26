@@ -13,7 +13,7 @@ int main(void){
     //lista_movel_retira(lista, "dda");
     //lista_movel_imprime(lista);
     printf("Editando\n");
-    lista_movel_edita(lista, "dda", "zzg", "bansd", 6.43, 10);
+    lista_movel_edita(lista, "abc", "bbb", "bansd", 6.43, 10);
     lista_movel_imprime(lista);
     return 0;
 }

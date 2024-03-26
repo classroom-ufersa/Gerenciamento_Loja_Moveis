@@ -101,32 +101,6 @@ Movel *lista_movel_retira(Movel*l, char nome[]){
         anterior = p;
     }
 }
-	/*Movel *p;
-	for (p = l; p == NULL; l->proximo){
-		l->proximo = p;
-		if (strcmp(nome_busca, p->nome) == 0 ){
-			strcpy(p->nome, nome);
-			strcpy(p->tipo, tipo);
-			p->preco = preco;
-			p->qtd_estoque = qdt_estoque;
-		}
-	}
-	return l;
-	/*if (p == NULL){
-		printf("Lista vazia\n");
-		return l;
-	}
-	while(strcmp(p->nome,nome) != 0){
-		l = p;
-		p->proximo;
-	}
-	if (strcmp(p->nome,nome) == 0){
-		strcpy(p->nome, nome);
-		strcpy(p->tipo, tipo);
-		p->preco = preco;
-		p->qtd_estoque = qdt_estoque;
-	}
-	return l;*/
 
 void lista_movel_libera(Movel** l){
     Movel* p = *l;
