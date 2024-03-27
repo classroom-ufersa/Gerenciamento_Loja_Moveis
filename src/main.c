@@ -41,7 +41,11 @@ int main(void){
             break;
         case '3': //editar movel
             printf("Digite o nome do movel que deseja editar:");
+            gets(movel);
+            m = lista_movel_busca(movel, m);
             printf("Digite o novo nome: \nDigite o novo tipo \n Digite o preco: \n, Digite a quantidade de estoque disponivel");
+            strcpy(m->nome, movel);
+
             break;
         case '4': //adicionar setor
             print("Digite o nome do novo setor: \nDigite a descricao do setor:");
