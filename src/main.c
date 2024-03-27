@@ -10,7 +10,6 @@ int main(void){
         scanf("%c", &op_menu);
         switch (op_menu){
         case '1': //adicionar movel
-        
             printf("\t\t Adicionar movel\n");
             printf("1 - Adicionar movel a um setor existente\n2 - Criar novo setor\n");
             scanf("%d", &op_submenu);
@@ -37,6 +36,8 @@ int main(void){
             break;
         case '2': //remover movel
             printf("Digite o nome do movel que deseja remover:");
+            gets(movel);
+            lista_movel_retira(m, movel);
             break;
         case '3': //editar movel
             printf("Digite o nome do movel que deseja editar:");
@@ -63,5 +64,5 @@ int main(void){
             break;
         }
 
-    } while (opcao != '8');
+    } while (op_menu != '8');
 }
