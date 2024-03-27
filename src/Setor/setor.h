@@ -5,7 +5,7 @@
 
 typedef struct setor Setor;
 
-Setor* lista_cria_setor(void);
+Setor* lista_setor_cria(void);
 
 Setor* lista_setor_adiciona_ordenado(Setor* Lista, char nome[], char descricao[]);
 

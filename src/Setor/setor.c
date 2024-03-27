@@ -7,7 +7,7 @@ struct setor{
     struct setor *proximo;
 };
 
-Setor* lista_cria_setor(void) {
+Setor* lista_setor_cria(void) {
     return NULL;
 }
 
@@ -70,7 +70,8 @@ Setor * lista_setor_retira(Setor*a, char nome[]){
 
 void lista_setor_imprime(Setor*a){
 	Setor*p;
-	for(p = a; p != NULL; p = p ->proximo){
+	for(p = a; p != NULL; p = p->proximo){
 		printf("Nome: %s\t\t Descricao: %s\n", p->nome, p->descricao);
 	}
 }
+
