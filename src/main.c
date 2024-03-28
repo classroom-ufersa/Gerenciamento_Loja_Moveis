@@ -48,16 +48,16 @@ int main(void){
 
             break;
         case '4': //adicionar setor
-            print("Digite o nome do novo setor: \nDigite a descricao do setor:");
+            printf("Digite o nome do novo setor: \nDigite a descricao do setor:");
             break;
         case '5': //remover setor
-            print("Digite o nome do setor que deseja remover:");
+            printf("Digite o nome do setor que deseja remover:");
             break;
         case '6': //Listar setores e moveis
             
             break;
         case '7': //buscar movel
-            
+            printf("Digite o nome do movel que deseja buscar:");
             break;
         case '8': //sair
             printf("Programa encerrado");

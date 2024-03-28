@@ -87,9 +87,7 @@ Movel *lista_movel_retira(Movel*l, char nome[]){
     return l;
 } 
 	Movel* lista_movel_edita(Movel* l, char nome_busca[], char nome[], char tipo[], float preco, int qtd_estoque) {
-    
-	Movel *p;
-    Movel *anterior = NULL;
+    Movel *p;
 
     for (p = l; p != NULL; p = p->proximo) {
         if (strcmp(nome_busca, p->nome) == 0) {
@@ -97,9 +95,10 @@ Movel *lista_movel_retira(Movel*l, char nome[]){
             strcpy(p->tipo, tipo);
             p->preco = preco;
             p->qtd_estoque = qtd_estoque;
-            return l;        }
-        anterior = p;
+            return l;
+        }
     }
+    return l;
 }
 
 void lista_movel_libera(Movel** l){
