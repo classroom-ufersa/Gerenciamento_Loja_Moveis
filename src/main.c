@@ -12,18 +12,19 @@ int main(void){
         case '1': //adicionar movel
             printf("\t\t Adicionar movel\n");
             printf("1 - Adicionar movel a um setor existente\n2 - Criar novo setor\n");
-            scanf("%d", &op_submenu);
+            scanf("%s", &op_submenu);
             switch (op_submenu){
             case '1':
                 printf("\t\tLista de setores");
                 lista_setor_imprime(s);
                 printf("Digite o nome do setor que deseja adicionar o movel:");
-                gets(setor);
+                fgets(setor);
                 s = lista_setor_busca(setor);
                 printf("Cadastre o movel com: Nome, Tipo, Preco e quantidade em estoque.\n");
-                scanf("%s%s%f%d",s->moveis->nome, s->moveis->tipo, s->moveis->preco, s->moveis->qtd_estoque);
-                if (lista_setor_vazia(s) != NULL){
-                    printf("Movel adicionado com sucesso.");
+                scanf("%s%s%f%d", s->moveis->nome, s->moveis->tipo, &s->moveis->preco, &s->moveis->qtd_estoque);
+                if (lista_setor_vazia(s)){
+                    printf("Setor nao encontrado");
+                    break;
                 }
                 break;
             case '2':
@@ -36,12 +37,12 @@ int main(void){
             break;
         case '2': //remover movel
             printf("Digite o nome do movel que deseja remover:");
-            gets(movel);
+            fgets(movel);
             lista_movel_retira(m, movel);
             break;
         case '3': //editar movel
             printf("Digite o nome do movel que deseja editar:");
-            gets(movel);
+            fgets(movel);
             m = lista_movel_busca(movel, m);
             printf("Digite o novo nome: \nDigite o novo tipo \n Digite o preco: \n, Digite a quantidade de estoque disponivel");
             strcpy(m->nome, movel);
