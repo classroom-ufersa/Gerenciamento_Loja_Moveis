@@ -14,7 +14,4 @@ void menu(void);
 
 void limpa_buffer(void);
 
-
-
-
 #endif //SETTINGS_H

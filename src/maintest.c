@@ -11,19 +11,6 @@ int main(void){
         lista_setor_imprime(lista);
         return 0;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
     /*
     Movel *lista = lista_movel_cria();
     lista = lista_movel_adiciona_ordenado(lista, "dda", "bancada", 65.5, 20);
