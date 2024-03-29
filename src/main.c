@@ -18,7 +18,7 @@ int main(void){
                 printf("\t\tLista de setores");
                 lista_setor_imprime(s);
                 printf("Digite o nome do setor que deseja adicionar o movel:");
-                fgets(setor);
+                gets(setor);
                 s = lista_setor_busca(setor);
                 printf("Cadastre o movel com: Nome, Tipo, Preco e quantidade em estoque.\n");
                 scanf("%s%s%f%d", s->moveis->nome, s->moveis->tipo, &s->moveis->preco, &s->moveis->qtd_estoque);
@@ -37,16 +37,15 @@ int main(void){
             break;
         case '2': //remover movel
             printf("Digite o nome do movel que deseja remover:");
-            fgets(movel);
+            gets(movel);
             lista_movel_retira(m, movel);
             break;
         case '3': //editar movel
             printf("Digite o nome do movel que deseja editar:");
-            fgets(movel);
+            gets(movel);
             m = lista_movel_busca(movel, m);
             printf("Digite o novo nome: \nDigite o novo tipo \n Digite o preco: \n, Digite a quantidade de estoque disponivel");
             strcpy(m->nome, movel);
-
             break;
         case '4': //adicionar setor
             printf("Digite o nome do novo setor: \nDigite a descricao do setor:");
@@ -55,7 +54,6 @@ int main(void){
             printf("Digite o nome do setor que deseja remover:");
             break;
         case '6': //Listar setores e moveis
-            
             break;
         case '7': //buscar movel
             printf("Digite o nome do movel que deseja buscar:");
@@ -68,6 +66,5 @@ int main(void){
             printf("Digite uma opcao valida...");
             break;
         }
-
     } while (op_menu != '8');
 }
