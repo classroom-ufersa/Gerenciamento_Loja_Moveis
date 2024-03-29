@@ -12,8 +12,6 @@ struct movel {
     struct movel* proximo;
 };
 
-
-
 Movel* lista_movel_cria(void) {
     return NULL;
 }
@@ -86,9 +84,9 @@ Movel *lista_movel_retira(Movel*l, char nome[]){
     free(p);
     return l;
 } 
-	Movel* lista_movel_edita(Movel* l, char nome_busca[], char nome[], char tipo[], float preco, int qtd_estoque) {
-    Movel *p;
 
+Movel* lista_movel_edita(Movel* l, char nome_busca[], char nome[], char tipo[], float preco, int qtd_estoque) {
+	Movel *p;
     for (p = l; p != NULL; p = p->proximo) {
         if (strcmp(nome_busca, p->nome) == 0) {
             strcpy(p->nome, nome);
