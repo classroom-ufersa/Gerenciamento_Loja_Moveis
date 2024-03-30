@@ -13,28 +13,29 @@ Setor* lista_setor_cria(void) {
 
 Setor* lista_setor_adiciona_ordenado(Setor* Lista, char nome[], char descricao[]){
     Setor* novo;
-	Setor* anterior = NULL;
-	Setor* p = Lista;
-	while(p!=NULL && strcmp(nome, p->nome) > 0){
-		anterior = p;
-		p = p->proximo;
-	}
-	novo = (Setor*) malloc(sizeof(Setor));
-	if (novo == NULL){
-		printf("Erro de alocação");
-		exit(1);
-	}
-	strcpy(novo->nome, nome);
+    Setor* anterior = NULL;
+    Setor* p = Lista;
+    while(p != NULL && strcmp(nome, p->nome) > 0){
+        anterior = p;
+        p = p->proximo;
+    }
+    novo = (Setor*) malloc(sizeof(Setor));
+    if (novo == NULL){
+        printf("Erro de alocação");
+        exit(1);
+    }
+    strcpy(novo->nome, nome);
     strcpy(novo->descricao, descricao);
-	if(anterior == NULL){
-		novo->proximo = Lista;
-		Lista = novo;
-	}
-	else {
-		novo->proximo = anterior-> proximo;
-		anterior->proximo = novo;
-	}
-	return Lista;
+    novo->moveis = NULL; // Inicializa a lista encadeada de móveis como NULL
+    if(anterior == NULL){
+        novo->proximo = Lista;
+        Lista = novo;
+    }
+    else {
+        novo->proximo = anterior-> proximo;
+        anterior->proximo = novo;
+    }
+    return Lista;
 }
 
 int lista_setor_vazia(Setor* a){
@@ -73,17 +74,4 @@ void lista_setor_imprime(Setor*a){
 	for(p = a; p != NULL; p = p->proximo){
 		printf("Nome: %s\t\t Descricao: %s\n", p->nome, p->descricao);
 	}
-}
-
-Setor* cadastra_movel_no_setor(Setor* s, char nome_setor[], char nome_movel[], char tipo[], float preco, int qtd_estoque){
-	Setor* p = s;
-	while(p != NULL && strcmp(p->nome, nome_setor) != 0){
-		p = p->proximo;
-	}
-	if(p == NULL){
-		printf("Setor não encontrado\n");
-		return s;
-	}
-	p->moveis = lista_movel_adiciona_ordenado(p->moveis, nome_movel, tipo, preco, qtd_estoque);
-	return s;
 }

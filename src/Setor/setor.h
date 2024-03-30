@@ -9,6 +9,8 @@ Setor* lista_setor_cria(void);
 
 Setor* lista_setor_adiciona_ordenado(Setor* Lista, char nome[], char descricao[]);
 
+Setor* lista_setor_busca(char nome[], Setor* l);
+
 int lista_setor_vazia(Setor* a);
 
 void lista_setor_libera(Setor* l);
