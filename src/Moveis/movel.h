@@ -13,12 +13,12 @@ int lista_movel_vazia(Movel* l);
 
 void lista_movel_imprime(Movel*l);
 
-Movel * lista_movel_busca(char nome[], Movel* l);
+Movel* lista_movel_busca(char nome[], Movel* l);
 
-Movel * lista_movel_retira(Movel*l, char nome[]);
+Movel* lista_movel_retira(Movel*l, char nome[]);
 
 void lista_movel_libera(Movel** l);
 
-Movel * lista_movel_edita(Movel* l, char nome_busca[], char nome[], char tipo[], float preco, int qdt_estoque);
+Movel* lista_movel_edita(Movel* l, char nome_busca[], char nome[], char tipo[], float preco, int qdt_estoque);
 
 #endif //MOVEL_H

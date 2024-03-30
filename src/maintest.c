@@ -1,7 +1,7 @@
 #include "Setor/setor.c"
 //Programa Main feito para testar as funções
 int main(void){
-        Setor* lista = lista_cria_setor();
+        Setor* lista = lista_setor_cria();
         lista = lista_setor_adiciona_ordenado(lista, "Cadeiras", "Setor destinado a cadeiras");
         lista = lista_setor_adiciona_ordenado(lista, "Mesas", "Setor destinado a mesas");
         lista = lista_setor_adiciona_ordenado(lista, "computadores", "Setor destinado a computadores");

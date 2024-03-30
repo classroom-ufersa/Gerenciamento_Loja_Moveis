@@ -75,3 +75,15 @@ void lista_setor_imprime(Setor*a){
 	}
 }
 
+Setor* cadastra_movel_no_setor(Setor* s, char nome_setor[], char nome_movel[], char tipo[], float preco, int qtd_estoque){
+	Setor* p = s;
+	while(p != NULL && strcmp(p->nome, nome_setor) != 0){
+		p = p->proximo;
+	}
+	if(p == NULL){
+		printf("Setor não encontrado\n");
+		return s;
+	}
+	p->moveis = lista_movel_adiciona_ordenado(p->moveis, nome_movel, tipo, preco, qtd_estoque);
+	return s;
+}
