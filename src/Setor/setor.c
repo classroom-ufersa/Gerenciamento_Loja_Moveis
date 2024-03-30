@@ -38,6 +38,16 @@ Setor* lista_setor_adiciona_ordenado(Setor* Lista, char nome[], char descricao[]
     return Lista;
 }
 
+Setor* lista_setor_busca(char nome[], Setor* l){
+    Setor *p;
+    for(p = l; p != NULL; p = p->proximo){
+        if(strcmp(nome, p->nome) == 0){
+            return p;
+        }
+    }
+    return NULL;
+}
+
 int lista_setor_vazia(Setor* a){
 	return (a==NULL);
 }
