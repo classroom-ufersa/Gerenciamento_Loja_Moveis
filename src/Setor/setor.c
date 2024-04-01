@@ -26,7 +26,7 @@ Setor* lista_setor_adiciona_ordenado(Setor* Lista, char nome[], char descricao[]
     }
     strcpy(novo->nome, nome);
     strcpy(novo->descricao, descricao);
-    novo->moveis = NULL; // Inicializa a lista encadeada de móveis como NULL
+    novo->moveis = NULL;
     if(anterior == NULL){
         novo->proximo = Lista;
         Lista = novo;
