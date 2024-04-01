@@ -1,7 +1,7 @@
 #include "Setor/setor.c"
 
 int main(void){
-    FILE *fp;
+    FILE *DataBase;
     char op_submenu,op_menu, setor[Max], movel[Max];
     Setor *s = lista_setor_cria();
     Movel *m = lista_movel_cria();
