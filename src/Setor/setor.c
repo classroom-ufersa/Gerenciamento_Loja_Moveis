@@ -21,7 +21,7 @@ Setor* lista_setor_adiciona_ordenado(Setor* Lista, char nome[], char descricao[]
     }
     novo = (Setor*) malloc(sizeof(Setor));
     if (novo == NULL){
-        printf("Erro de alocação");
+        printf("Erro de alocacao");
         exit(1);
     }
     strcpy(novo->nome, nome);

@@ -26,7 +26,7 @@ Movel* lista_movel_adiciona_ordenado(Movel* Lista, char nome[], char tipo[], flo
 	}
 	novo = (Movel*) malloc(sizeof(Movel));
 	if (novo == NULL){
-		printf("Erro de alocação");
+		printf("Erro de alocacao");
 		exit(1);
 	}
 	strcpy(novo->nome,nome);
