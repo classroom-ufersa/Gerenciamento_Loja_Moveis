@@ -15,7 +15,7 @@ int main(void){
         case '1': //adicionar movel
             printf("\t\t Adicionar movel\n");
             printf("1 - Adicionar movel a um setor existente\n2 - Criar novo setor\n");
-            scanf("%c", &op_submenu);
+            scanf(" %c", &op_submenu);
             switch (op_submenu){
             case '1':
                 if (lista_setor_vazia(setor)){
@@ -32,9 +32,9 @@ int main(void){
                 printf("Digite o tipo do movel:\n");
                 scanf(" %[^\n]s", movel_tipo);
                 printf("Digite o preco do movel:\n");
-                scanf("%f", &movel_preco);
+                scanf(" %f", &movel_preco);
                 printf("Digite o numero total de estoque:\n");
-                scanf("%d", &movel_quantidade);
+                scanf(" %d", &movel_quantidade);
                 aux->moveis = lista_movel_adiciona_ordenado(aux->moveis, movel_nome, movel_tipo, movel_preco, movel_quantidade);
                 break;
             case '2':
