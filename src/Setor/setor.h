@@ -7,6 +7,8 @@ typedef struct setor Setor;
 
 Setor* lista_setor_cria(void);
 
+void imprime_moveis_setor(Setor*a);
+
 Setor* lista_setor_adiciona_ordenado(Setor* Lista, char nome[], char descricao[]);
 
 Setor* lista_setor_busca(char nome[], Setor* l);

@@ -85,3 +85,11 @@ void lista_setor_imprime(Setor*a){
 		printf("Nome: %s\t\t Descricao: %s\n", p->nome, p->descricao);
 	}
 }
+
+void imprime_moveis_setor(Setor*a){
+    Setor*p;
+	for(p = a; p != NULL; p = p->proximo){
+		printf("Setor: %s\t\t Descricao: %s\n", p->nome, p->descricao);
+        lista_movel_imprime(p->moveis);
+	}
+}

@@ -14,17 +14,7 @@ int main() {
     lista_setores->proximo->proximo->moveis = lista_movel_adiciona_ordenado(lista_setores->proximo->proximo->moveis, "Cama", "Movel", 250.0, 2);
     lista_setores->proximo->proximo->moveis = lista_movel_adiciona_ordenado(lista_setores->proximo->proximo->moveis, "Guarda-roupa", "Movel", 400.0, 4);
 
-    printf("Lista de Setores:\n");
-    lista_setor_imprime(lista_setores);
-    printf("\n");
-
-    Setor* setor_atual = lista_setores;
-    while(setor_atual != NULL) {
-        printf("Moveis no setor %s:\n", setor_atual->nome);
-        lista_movel_imprime(setor_atual->moveis);
-        printf("\n");
-        setor_atual = setor_atual->proximo;
-    }
+    imprime_moveis_setor(lista_setores);
 
     lista_setor_libera(lista_setores);
 

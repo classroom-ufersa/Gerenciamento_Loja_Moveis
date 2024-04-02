@@ -2,7 +2,7 @@
 
 void menu(void){
     printf("***************************\n");
-    printf("\t\tCadastro de móveis/setores.\n");
+    printf("\t\tCadastro de moveis/setores.\n");
     printf("1-Adicionar Movel\n");
     printf("2-Remover Movel\n");
     printf("3-Editar Movel\n");

@@ -84,13 +84,24 @@ int main(void){
         case '5': //remover setor
             printf("Digite o nome do setor que deseja remover:");
             gets(setor_nome);
-            aux = lista_setor_busca(setor_nome, setor;)
+            aux = lista_setor_busca(setor_nome, setor);
             lista_setor_libera(aux);
             break;
-        case '6': //Listar setores e moveis
+        case '6':
+            imprime_moveis_setor(setor);
             break;
-        case '7': //buscar movel
-            printf("Digite o nome do movel que deseja buscar:");
+        case '7': //buscar movel imcompleto
+            printf("Digite o nome do setor que está o movel");
+            gets(setor_nome);
+            aux = lista_setor_busca(setor_nome, aux);
+            printf("Digite o nome do movel que deseja buscar:"); 
+            gets(movel_nome);
+            aux->moveis = lista_movel_busca(movel_nome, aux);
+            if(aux->moveis != NULL){
+                printf("movel encontrado");
+            }else{
+                printf("Movel nao encontrado");
+            }             
             break;
         case '8': //sair
             printf("Programa encerrado");
