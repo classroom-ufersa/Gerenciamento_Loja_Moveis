@@ -3,27 +3,27 @@
 int main(void){
     //FILE *DataBase;
     char setor_nome[Max], setor_descricao[Max], movel_nome[Max], movel_tipo[Max] ;
-    int op_submenu, op_menu; 
+    int op_menu, op_submenu; 
     float movel_preco;
     int movel_quantidade;
     Setor *setor = lista_setor_cria();
-    Setor *aux = NULL;
+    Setor *aux = lista_setor_cria();
     do{
         menu();
-        printf("Digite uma opcao:");
+        printf("Digite uma opcao: ");
         scanf("%d", &op_menu);
         switch (op_menu){
         case 1: //adicionar movel
             printf("\t\t Adicionar movel\n");
             printf("1 - Adicionar movel a um setor existente\n2 - Criar novo setor\n");
-            scanf(" %c", &op_submenu);
+            scanf(" %d", &op_submenu);
             switch (op_submenu){
             case 1:
                 if (lista_setor_vazia(setor)){
                     printf("Setor nao encontrado");
                     break;
                 }
-                printf("\t\tLista de setores");
+                printf("\t\tLista de setores\n");
                 lista_setor_imprime(setor);
                 printf("Digite o nome do setor que deseja adicionar o movel:");
                 scanf(" %[^\n]s", setor_nome);
@@ -89,10 +89,14 @@ int main(void){
             lista_setor_libera(aux);
             break;
         case 6:
-            if(setor!=NULL)
+            if(setor!=NULL){
             imprime_moveis_setor(setor);
-            else
+            getch();
+            }
+            else{
                 printf("Lista vazia rapaz!\n");
+                getch();
+            }
             break;
         case 7: //buscar movel
             printf("Digite o nome do setor que está o movel");
