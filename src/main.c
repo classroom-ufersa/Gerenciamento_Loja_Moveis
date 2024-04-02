@@ -1,8 +1,9 @@
 #include "Setor/setor.c"
 
 int main(void){
-    FILE *DataBase;
-    char op_submenu,op_menu, setor_nome[Max], setor_descricao[Max], movel_nome[Max], movel_tipo[Max] ; 
+    //FILE *DataBase;
+    char setor_nome[Max], setor_descricao[Max], movel_nome[Max], movel_tipo[Max] ;
+    int op_submenu, op_menu; 
     float movel_preco;
     int movel_quantidade;
     Setor *setor = lista_setor_cria();
@@ -10,14 +11,14 @@ int main(void){
     do{
         menu();
         printf("Digite uma opcao:");
-        scanf("%c", &op_menu);
+        scanf("%d", &op_menu);
         switch (op_menu){
-        case '1': //adicionar movel
+        case 1: //adicionar movel
             printf("\t\t Adicionar movel\n");
             printf("1 - Adicionar movel a um setor existente\n2 - Criar novo setor\n");
             scanf(" %c", &op_submenu);
             switch (op_submenu){
-            case '1':
+            case 1:
                 if (lista_setor_vazia(setor)){
                     printf("Setor nao encontrado");
                     break;
@@ -37,7 +38,7 @@ int main(void){
                 scanf(" %d", &movel_quantidade);
                 aux->moveis = lista_movel_adiciona_ordenado(aux->moveis, movel_nome, movel_tipo, movel_preco, movel_quantidade);
                 break;
-            case '2':
+            case 2:
                 printf("Digite o nome do setor:\n");
                 scanf(" %[^\n]s", setor_nome);
                 printf("Digite a descricao do setor:\n");
@@ -49,15 +50,15 @@ int main(void){
                 break;
             }
             break;
-        case '2': //remover movel
+        case 2: //remover movel
             printf("Digite o nome do setor que está o movel:");
             scanf(" %[^\n]s", setor_nome);
             aux = lista_setor_busca(setor_nome, setor);
             printf("Digite o nome do movel que deseja remover:");
             scanf(" %[^\n]s", movel_nome);
-            lista_movel_retira(aux, movel_nome);
+            lista_movel_retira(aux->moveis, movel_nome);
             break;
-        case '3': //editar movel
+        case 3: //editar movel
             printf("Digite o nome do setor do movel:");
             scanf(" %[^\n]s", setor_nome);
             aux = lista_setor_busca(setor_nome, setor);
@@ -74,36 +75,39 @@ int main(void){
             scanf(" %d", &movel_quantidade);
             aux->moveis = lista_movel_edita(aux->moveis, nome_movel_editar, movel_nome, movel_tipo, movel_preco, movel_quantidade);
             break;
-        case '4': //adicionar setor
+        case 4: //adicionar setor
             printf("Digite o nome do setor:\n");
             scanf(" %[^\n]s", setor_nome);
             printf("Digite a descricao do setor:\n");
             scanf(" %[^\n]s", setor_descricao);
             setor = lista_setor_adiciona_ordenado(setor, setor_nome, setor_descricao);
             break;
-        case '5': //remover setor
+        case 5: //remover setor
             printf("Digite o nome do setor que deseja remover:");
             scanf(" %[^\n]s", setor_nome);
             aux = lista_setor_busca(setor_nome, setor);
             lista_setor_libera(aux);
             break;
-        case '6':
+        case 6:
+            if(setor!=NULL)
             imprime_moveis_setor(setor);
+            else
+                printf("Lista vazia rapaz!\n");
             break;
-        case '7': //buscar movel
+        case 7: //buscar movel
             printf("Digite o nome do setor que está o movel");
             scanf(" %[^\n]s", setor_nome);
             aux = lista_setor_busca(setor_nome, aux);
             printf("Digite o nome do movel que deseja buscar:"); 
             scanf(" %[^\n]s", movel_nome);
-            aux->moveis = lista_movel_busca(movel_nome, aux);
+            aux->moveis = lista_movel_busca(movel_nome, aux->moveis);
             if(aux->moveis != NULL){
                 printf("movel encontrado");
             }else{
                 printf("Movel nao encontrado");
             }             
             break;
-        case '8': //sair
+        case 8: //sair
             printf("Programa encerrado");
                 return 0;
             break;    
@@ -111,5 +115,5 @@ int main(void){
             printf("Digite uma opcao valida...");
             break;
         }
-    } while (op_menu != '8');
+    } while (op_menu != 8);
 }
