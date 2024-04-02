@@ -1,7 +1,7 @@
 #include "settings.h"
 
 void menu(void){
-    printf("***************************\n");
+    printf("\n***************************\n");
     printf("\t\tCadastro de moveis/setores.\n");
     printf("1-Adicionar Movel\n");
     printf("2-Remover Movel\n");

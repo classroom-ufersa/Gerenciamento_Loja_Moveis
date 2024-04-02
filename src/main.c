@@ -90,7 +90,7 @@ int main(void){
         case '6':
             imprime_moveis_setor(setor);
             break;
-        case '7': //buscar movel imcompleto
+        case '7': //buscar movel
             printf("Digite o nome do setor que está o movel");
             scanf(" %[^\n]s", setor_nome);
             aux = lista_setor_busca(setor_nome, aux);
