@@ -117,6 +117,8 @@ int main(void){
                 } else {
                     printf("Movel nao encontrado\n");
                 }
+            }  else {
+                printf("Setor nao encontrado\n");
             }
                     case 8: //sair
             printf("Programa encerrado");
