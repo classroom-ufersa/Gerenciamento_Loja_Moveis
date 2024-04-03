@@ -95,11 +95,9 @@ int main(void){
         case 6:
             if(setor!=NULL){
             imprime_moveis_setor(setor);
-            getch();
             }
             else{
                 printf("Lista vazia!\n");
-                getch();
             }
             break;
         case 7: //buscar movel
