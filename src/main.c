@@ -98,7 +98,7 @@ int main(void){
             getch();
             }
             else{
-                printf("Lista vazia rapaz!\n");
+                printf("Lista vazia!\n");
                 getch();
             }
             break;

@@ -62,7 +62,7 @@ void lista_setor_libera(Setor* l){
     }
 }
 
-Setor * lista_setor_retira(Setor*a, char nome[]){
+Setor* lista_setor_retira(Setor*a, char nome[]){
 	Setor *anterior = NULL; 
     Setor *p = a;
     while(strcmp(p->nome, nome) !=0){
