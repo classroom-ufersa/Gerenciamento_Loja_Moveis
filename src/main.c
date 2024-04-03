@@ -117,6 +117,7 @@ int main(void){
                     break;
                 } else {
                     printf("Movel nao encontrado\n");
+                    break;
                 }
             } else {
                 printf("Setor nao encontrado\n");	
