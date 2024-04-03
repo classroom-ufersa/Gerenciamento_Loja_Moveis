@@ -104,20 +104,21 @@ int main(void){
                 printf("Lista vazia!\n");
             }
             break;
-        case 7: //buscar movel
-            printf("Digite o nome do setor que está o movel");
+        case 7: //buscar móvel
+            printf("Digite o nome do setor que está o movel: ");
             scanf(" %[^\n]s", setor_nome);
             aux = lista_setor_busca(setor_nome, aux);
-            printf("Digite o nome do movel que deseja buscar:"); 
-            scanf(" %[^\n]s", movel_nome);
-            aux->moveis = lista_movel_busca(movel_nome, aux->moveis);
-            if(aux->moveis != NULL){
-                printf("movel encontrado");
-            }else{
-                printf("Movel nao encontrado");
-            }             
-            break;
-        case 8: //sair
+            if(aux != NULL) {
+                printf("Digite o nome do movel que deseja buscar: "); 
+                scanf(" %[^\n]s", movel_nome);
+                aux->moveis = lista_movel_busca(movel_nome, aux->moveis);
+                if(aux->moveis != NULL) {
+                    printf("Movel encontrado\n");
+                } else {
+                    printf("Movel nao encontrado\n");
+                }
+            }
+                    case 8: //sair
             printf("Programa encerrado");
                 return 0;
             break;    
