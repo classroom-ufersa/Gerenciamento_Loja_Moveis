@@ -121,6 +121,7 @@ int main(void){
                 }
             } else {
                 printf("Setor nao encontrado\n");	
+                break;
             }
          case 8: //sair
             printf("Programa encerrado");
