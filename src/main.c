@@ -104,7 +104,7 @@ int main(void){
                 printf("Lista vazia!\n");
             }
             break;
-        case 7: //buscar móvel
+         case 7: //buscar móvel
             printf("Digite o nome do setor que está o movel: ");
             scanf(" %[^\n]s", setor_nome);
             aux = lista_setor_busca(setor_nome, aux);
@@ -114,13 +114,14 @@ int main(void){
                 aux->moveis = lista_movel_busca(movel_nome, aux->moveis);
                 if(aux->moveis != NULL) {
                     printf("Movel encontrado\n");
+                    break;
                 } else {
                     printf("Movel nao encontrado\n");
                 }
-            }  else {
-                printf("Setor nao encontrado\n");
+            } else {
+                printf("Setor nao encontrado\n");	
             }
-                    case 8: //sair
+         case 8: //sair
             printf("Programa encerrado");
                 return 0;
             break;    
