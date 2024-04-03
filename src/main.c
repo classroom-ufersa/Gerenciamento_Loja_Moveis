@@ -89,8 +89,12 @@ int main(void){
         case 5: //remover setor
             printf("Digite o nome do setor que deseja remover:");
             scanf(" %[^\n]s", setor_nome);
-            aux = lista_setor_busca(setor_nome, setor);
-            lista_setor_libera(aux);
+            if (setor != NULL) {
+                setor = lista_setor_remove(setor, setor_nome);
+                printf("Setor removido com sucesso!\n");
+            } else {
+                printf("Lista de setores vazia!\n");
+            }
             break;
         case 6:
             if(setor!=NULL){
