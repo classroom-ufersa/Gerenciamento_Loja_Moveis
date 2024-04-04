@@ -1,8 +1,8 @@
 #include "settings.h"
 
 void menu(void){
-    printf("***************************\n");
-    printf("\t\tCadastro de móveis/setores.\n");
+    printf("\n***************************\n");
+    printf("\t\tCadastro de moveis/setores.\n");
     printf("1-Adicionar Movel\n");
     printf("2-Remover Movel\n");
     printf("3-Editar Movel\n");
@@ -13,8 +13,10 @@ void menu(void){
     printf("8-Sair\n");
     printf("***************************\n");
 }
-void limpa_buffer(void){};
+void limpa_buffer(void){
+    int c;
+    while ((c = getchar()) != '\n' && c != EOF);
+}
 
 void listar(void){};
-
 void upper(){};
