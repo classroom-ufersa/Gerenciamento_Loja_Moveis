@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+D
 #include "settings.h"
 #define Max 50
 
@@ -22,7 +22,6 @@ void limpa_buffer(void){};
 
 void listar(void){};
 
-=======
 #include "settings.h"
 
 void menu(void){
@@ -44,6 +43,4 @@ void limpa_buffer(void){
 }
 
 void listar(void){};
-
->>>>>>> c0172dd47f5c837269cb299655faa86a44e098e4
 void upper(){};
