@@ -93,3 +93,21 @@ void imprime_moveis_setor(Setor*a){
         lista_movel_imprime(p->moveis);
 	}
 }
+
+//teste de funções para o arquivo
+void lista_salvar_no_arquivo(Setor* a, char nome[]) {
+    FILE* file = fopen(nome, "w");
+    if (file == NULL) {
+        printf("Erro ao abrir o arquivo.\n");
+        return;
+    }
+
+    while (a != NULL) {
+        fprintf(file, "%s%s%s%s%f%d\n", a->nome, a->descricao, a->moveis->nome, a->moveis->tipo, a->moveis->preco, a->moveis->qtd_estoque);
+        a = a->proximo;
+    }
+
+    fclose(file);
+}
+
+

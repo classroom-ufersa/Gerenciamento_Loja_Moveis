@@ -1,7 +1,21 @@
 #include "Setor/setor.c"
 
 int main(void){
-    //FILE *DataBase;
+/*    FILE *DataBase;
+    DataBase = fopen("DataBase.txt", "w");
+    if (DataBase == NULL) {
+        printf("Erro ao abrir o arquivo.\n");
+        return 1;
+    }
+    fprintf(DataBase, "%s\n", imprime_moveis_setor(setor));
+    fclose(DataBase);
+
+
+    fscanf(DataBase, "%s", imprime_moveis_setor(setor)); //ler os dados do arquivo
+
+
+*/
+
     char setor_nome[Max], setor_descricao[Max], movel_nome[Max], movel_tipo[Max] ;
     int op_menu, op_submenu; 
     float movel_preco;

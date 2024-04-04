@@ -1,4 +1,5 @@
 #include "settings.h"
+#define Max 50
 
 void menu(void){
     printf("\n***************************\n");
@@ -13,6 +14,9 @@ void menu(void){
     printf("8-Sair\n");
     printf("***************************\n");
 }
+
+
+
 void limpa_buffer(void){};
 
 void listar(void){};

@@ -21,4 +21,6 @@ Setor* lista_setor_retira(Setor*a, char nome[]);
 
 void lista_setor_imprime(Setor*a);
 
+void lista_salvar_no_arquivo(Setor* a, char nome[]);
+
 #endif //SETOR_H

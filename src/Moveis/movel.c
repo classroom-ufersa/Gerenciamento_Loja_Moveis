@@ -3,7 +3,6 @@
 #include <string.h>
 #include "movel.h"
 
-#define Max 50
 struct movel {
     char nome[Max];
     char tipo[Max];
