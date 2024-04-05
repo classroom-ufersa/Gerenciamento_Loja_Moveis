@@ -63,11 +63,10 @@ int main(void)
             printf("Digite o nome do setor que está o movel:");
             scanf(" %[^\n]s", setor_nome);
             aux = lista_setor_busca(setor_nome, setor);
-            if (aux != NULL)
-            {
+            if (aux != NULL){
                 printf("Digite o nome do movel que deseja remover:");
                 scanf(" %[^\n]s", movel_nome);
-                aux->moveis = lista_movel_retira(aux->moveis, movel_nome);
+                aux->moveis = lista_movel_remove(aux->moveis, movel_nome);
             }
             else
             {

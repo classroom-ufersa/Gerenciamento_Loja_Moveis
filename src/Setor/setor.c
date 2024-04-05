@@ -48,20 +48,6 @@ Setor* lista_setor_busca(char nome[], Setor* l){
     return NULL;
 }
 
-int lista_setor_vazia(Setor* a){
-	return (a==NULL);
-}
-
-void lista_setor_libera(Setor* l){
-    Setor* p = l;
-    Setor* t;
-    while (p != NULL) {
-        t = p->proximo;
-        free(p);
-        p = t;
-    }
-}
-
 Setor* lista_setor_remove(Setor*a, char nome[]){
 	Setor *anterior = NULL; 
     Setor *p = a;
@@ -77,43 +63,6 @@ Setor* lista_setor_remove(Setor*a, char nome[]){
         anterior->proximo = p->proximo;
     free(p);
     return a;
-}
-
-void lista_setor_imprime(Setor*a){
-	Setor*p;
-	for(p = a; p != NULL; p = p->proximo){
-		printf("Nome: %s\t\t Descricao: %s\n", p->nome, p->descricao);
-	}
-}
-
-void imprime_moveis_setor(Setor*a){
-    Setor*p;
-	for(p = a; p != NULL; p = p->proximo){
-		printf("Setor: %s\t\t Descricao: %s\n", p->nome, p->descricao);
-        lista_movel_imprime(p->moveis);
-	}
-}
-
-//teste de funções para o arquivo
-void lista_salvar_no_arquivo(Setor* a, char nome[]) {
-    FILE* file = fopen(nome, "w");
-    if (file == NULL) {
-        printf("Erro ao abrir o arquivo.\n");
-        return;
-    }
-    Setor *setores = a;
-    Movel *moveis;
-    while (setores != NULL) {
-        fprintf(file, "Setor:%s\t%s\n", setores->nome, setores->descricao);
-        moveis = setores->moveis;
-        while (moveis != NULL){
-            fprintf(file, "Movel:%s\t%s\t%f\t%d\n", moveis->nome, moveis->tipo, moveis->preco, moveis->qtd_estoque);
-            moveis = moveis->proximo;
-        }
-        setores = setores->proximo;
-    }
-
-    fclose(file);
 }
 
 Setor *lista_ler_no_arquivo(Setor* a, char nome[]) {
@@ -139,6 +88,56 @@ Setor *lista_ler_no_arquivo(Setor* a, char nome[]) {
     }
     fclose(file);
     return a;
+}
+
+void imprime_moveis_setor(Setor*a){
+    Setor*p;
+	for(p = a; p != NULL; p = p->proximo){
+		printf("Setor: %s\t\t Descricao: %s\n", p->nome, p->descricao);
+        lista_movel_imprime(p->moveis);
+	}
+}
+
+void lista_setor_libera(Setor* l){
+    Setor* p = l;
+    Setor* t;
+    while (p != NULL) {
+        t = p->proximo;
+        free(p);
+        p = t;
+    }
+}
+
+void lista_setor_imprime(Setor*a){
+	Setor*p;
+	for(p = a; p != NULL; p = p->proximo){
+		printf("Nome: %s\t\t Descricao: %s\n", p->nome, p->descricao);
+	}
+}
+
+void lista_salvar_no_arquivo(Setor* a, char nome[]) {
+    FILE* file = fopen(nome, "w");
+    if (file == NULL) {
+        printf("Erro ao abrir o arquivo.\n");
+        return;
+    }
+    Setor *setores = a;
+    Movel *moveis;
+    while (setores != NULL) {
+        fprintf(file, "Setor:%s\t%s\n", setores->nome, setores->descricao);
+        moveis = setores->moveis;
+        while (moveis != NULL){
+            fprintf(file, "Movel:%s\t%s\t%f\t%d\n", moveis->nome, moveis->tipo, moveis->preco, moveis->qtd_estoque);
+            moveis = moveis->proximo;
+        }
+        setores = setores->proximo;
+    }
+
+    fclose(file);
+}
+
+int lista_setor_vazia(Setor* a){
+	return (a==NULL);
 }
  
 
