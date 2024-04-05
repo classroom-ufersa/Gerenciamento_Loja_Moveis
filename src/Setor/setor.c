@@ -106,8 +106,7 @@ void lista_salvar_no_arquivo(Setor* a, char nome[]) {
     while (setores != NULL) {
         fprintf(file, "Setor:%s\t%s\n", setores->nome, setores->descricao);
         moveis = setores->moveis;
-        while (moveis != NULL)
-        {
+        while (moveis != NULL){
             fprintf(file, "Movel:%s\t%s\t%f\t%d\n", moveis->nome, moveis->tipo, moveis->preco, moveis->qtd_estoque);
             moveis = moveis->proximo;
         }
@@ -128,8 +127,7 @@ Setor *lista_ler_no_arquivo(Setor* a, char nome[]) {
     int quantidade;
     Setor *aux;
     while (fgets(linha, 200, file) != NULL) {
-        if (strstr(linha, "Setor:") != NULL)
-        {
+        if (strstr(linha, "Setor:") != NULL){
            sscanf(linha, "Setor:%[^\t]\t%[^\n]", setor, descricao );
            a = lista_setor_adiciona_ordenado(a, setor, descricao);
            aux = lista_setor_busca(setor, a);
