@@ -1,0 +1,2 @@
+Setor:abc	Descrição:dsfsdfsdf
+Movel:cama de casal	Tipo:cama	Preço:R$899.0	Quantidade em estoque:25

@@ -124,10 +124,10 @@ void lista_salvar_no_arquivo(Setor* a, char nome[]) {
     Setor *setores = a;
     Movel *moveis;
     while (setores != NULL) {
-        fprintf(file, "Setor:%s\t%s\n", setores->nome, setores->descricao);
+        fprintf(file, "Setor:%s\tDescrição:%s\n", setores->nome, setores->descricao);
         moveis = setores->moveis;
         while (moveis != NULL){
-            fprintf(file, "Movel:%s\t%s\t%f\t%d\n", moveis->nome, moveis->tipo, moveis->preco, moveis->qtd_estoque);
+            fprintf(file, "Movel:%s\tTipo:%s\tPreço:R$%.1f\tQuantidade em estoque:%d\n", moveis->nome, moveis->tipo, moveis->preco, moveis->qtd_estoque);
             moveis = moveis->proximo;
         }
         setores = setores->proximo;

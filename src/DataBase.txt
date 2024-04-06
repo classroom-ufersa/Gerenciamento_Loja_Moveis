@@ -1,2 +1,0 @@
-Setor:Area	dasd
-Movel:cadeira	madeira	125.000000	12
