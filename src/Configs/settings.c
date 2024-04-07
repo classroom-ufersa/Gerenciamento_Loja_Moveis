@@ -17,6 +17,3 @@ void limpa_buffer(void){
     int c;
     while ((c = getchar()) != '\n' && c != EOF);
 }
-
-void listar(void){};
-void upper(){};
