@@ -93,7 +93,7 @@ Setor *lista_ler_no_arquivo(Setor* a, char nome[]) {
 void imprime_moveis_setor(Setor*a){
     Setor*p;
 	for(p = a; p != NULL; p = p->proximo){
-		printf("Setor: %s\t\t Descricao: %s\n", p->nome, p->descricao);
+		printf("Setor: %s\t\t%s\n", p->nome, p->descricao);
         lista_movel_imprime(p->moveis);
 	}
 }
