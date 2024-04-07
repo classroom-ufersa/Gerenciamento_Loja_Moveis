@@ -1,2 +1,10 @@
-Setor:abc	Descrição:dsfsdfsdf
-Movel:cama de casal	Tipo:cama	Preço:R$899.0	Quantidade em estoque:25
+Setor:a	Descricao:essfsdf
+Movel:fgh	Tipo:fhg	Preço:R$5.0	Quantidade em estoque:4
+Movel:fgh	Tipo:hfg	Preço:R$56.0	Quantidade em estoque:45
+Movel:nmbnm	Tipo:jhgjhgj	Preço:R$45.0	Quantidade em estoque:32
+Movel:nnmnm	Tipo:vbnbvn	Preço:R$45.0	Quantidade em estoque:342
+
+Setor:b	Descricao:sfdgdfgdsdf
+Movel:gfhfghfgh	Tipo:ergergerg	Preço:R$43.0	Quantidade em estoque:21
+Movel:ugyju	Tipo:kyukuy	Preço:R$67.0	Quantidade em estoque:5
+
