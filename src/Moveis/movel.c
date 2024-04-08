@@ -94,7 +94,7 @@ int lista_movel_vazia(Movel* l){
 void lista_movel_imprime(Movel*l){
 	Movel*p;
 	for(p = l; p != NULL; p = p->proximo){
-		printf("movel: %s\t\tPreco: %.2f\t\tTipo: %s\t\tQuantidade em estoque:%d\n", p->nome, p->preco,p->tipo, p->qtd_estoque);
+		printf("movel: %s\t\tPreco: %.1f\t\tTipo: %s\t\tQuantidade em estoque:%d\n", p->nome, p->preco,p->tipo, p->qtd_estoque);
 	}
 }
  
