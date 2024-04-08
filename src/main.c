@@ -4,7 +4,7 @@ int main(void)
 {
     char setor_nome[Max], setor_descricao[Max], movel_nome[Max], movel_tipo[Max], diretorio[Max];
     int op_menu, op_submenu;
-    float movel_preco;
+    float movel_preco; 
     int movel_quantidade;
     strcpy(diretorio, "DataBase.txt");
     Setor *setor = lista_setor_cria();
