@@ -33,4 +33,8 @@ void settings_press_enter(void){
     while(getchar() != '\n');
 }
 
+void settings_str_verify(char *nome){
+
+}
+
 
