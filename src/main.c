@@ -2,9 +2,9 @@
 
 int main(void)
 {
-    char setor_nome[Max], setor_descricao[Max], movel_nome[Max], movel_tipo[Max];
+    char setor_nome[Max], setor_descricao[Max], movel_nome[Max], movel_tipo[Max]; 
     int op_menu, op_submenu;
-    float movel_preco;
+    float movel_preco; 
     int movel_quantidade;
     char diretorio[Max];
     strcpy(diretorio, "DataBase.txt");

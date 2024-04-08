@@ -3,7 +3,7 @@
 #include <string.h>
 #include "movel.h"
 
-struct movel {
+struct movel { 
     char nome[Max];
     char tipo[Max];
     float preco;
@@ -73,7 +73,7 @@ Movel *lista_movel_remove(Movel*l, char nome[]){
     return l;
 }
 
-Movel* lista_movel_edita(Movel* l, char nome_busca[], char nome[], char tipo[], float preco, int qtd_estoque) {
+Movel* lista_movel_edita(Movel* l, char nome_busca[], char nome[], char tipo[], float preco, int qtd_estoque) { 
 	Movel *p;
     for (p = l; p != NULL; p = p->proximo) {
         if (strcmp(nome_busca, p->nome) == 0) {
@@ -87,11 +87,11 @@ Movel* lista_movel_edita(Movel* l, char nome_busca[], char nome[], char tipo[], 
     return l;
 }
 
-int lista_movel_vazia(Movel* l){
+int lista_movel_vazia(Movel* l){ 
 	return (l==NULL);
 }
 
-void lista_movel_imprime(Movel*l){
+void lista_movel_imprime(Movel*l){ 
 	Movel*p;
 	for(p = l; p != NULL; p = p->proximo){
 		printf("movel: %s\t\tPreco: %.1f\t\tTipo: %s\t\tQuantidade em estoque:%d\n", p->nome, p->preco,p->tipo, p->qtd_estoque);

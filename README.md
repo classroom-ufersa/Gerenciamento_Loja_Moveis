@@ -1,10 +1,8 @@
 # Gerenciamento_Loja_Moveis
-Sistema para gerenciamento de loja de moveis: 
-    Deve ser capaz de manipular setores e moveis
-    cada setor deve ter nome, descrição e moveis
-    cada movel em cada setor deve ter os seguintes atributos: nome, tipo, preço, qt_estoque
+Sistema criado para o gerenciamento de uma loja de moveis: 
+    Esse sistema é capaz de armazenar setores e moveis por meio do uso de Listas Encadeadas. O usuario é capaz de adicionar, remover, editar e buscar um movel especifico dentro de cada setor criado além de adicionar e remover setores.
 
-    menu: 
+    Menu 
         1- adicionar movel
         2- remover movel
         3- editar movel

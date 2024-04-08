@@ -1,17 +1,17 @@
 #include "setor.h"
 
-struct setor{
+struct setor{ 
     char nome[50];
     char descricao[50];
     Movel* moveis;
     struct setor *proximo;
 };
 
-Setor* lista_setor_cria(void) {
+Setor* lista_setor_cria(void) { 
     return NULL;
 }
 
-Setor* lista_setor_adiciona_ordenado(Setor* Lista, char nome[], char descricao[]){
+Setor* lista_setor_adiciona_ordenado(Setor* Lista, char nome[], char descricao[]){ 
     Setor* novo;
     Setor* anterior = NULL;
     Setor* p = Lista;
@@ -38,7 +38,7 @@ Setor* lista_setor_adiciona_ordenado(Setor* Lista, char nome[], char descricao[]
     return Lista;
 }
 
-Setor* lista_setor_busca(char nome[], Setor* l){
+Setor* lista_setor_busca(char nome[], Setor* l){ 
     Setor *p;
     for(p = l; p != NULL; p = p->proximo){
         if(strcmp(nome, p->nome) == 0){
@@ -48,7 +48,7 @@ Setor* lista_setor_busca(char nome[], Setor* l){
     return NULL;
 }
 
-Setor* lista_setor_remove(Setor*a, char nome[]){
+Setor* lista_setor_remove(Setor*a, char nome[]){ 
 	Setor *anterior = NULL; 
     Setor *p = a;
     while(strcmp(p->nome, nome) !=0){
@@ -65,7 +65,7 @@ Setor* lista_setor_remove(Setor*a, char nome[]){
     return a;
 }
 
-Setor *lista_ler_no_arquivo(Setor* a, char nome[]) {
+Setor *lista_ler_no_arquivo(Setor* a, char nome[]) { 
     FILE* file = fopen(nome, "r");
     if (file == NULL) {
         printf("Erro ao abrir o arquivo.\n");
@@ -90,7 +90,7 @@ Setor *lista_ler_no_arquivo(Setor* a, char nome[]) {
     return a;
 }
 
-void imprime_moveis_setor(Setor*a){
+void imprime_moveis_setor(Setor*a){ 
     Setor*p;
 	for(p = a; p != NULL; p = p->proximo){
 		printf("Setor: %s\t\t%s\n", p->nome, p->descricao);
@@ -98,7 +98,7 @@ void imprime_moveis_setor(Setor*a){
 	}
 }
 
-void lista_setor_libera(Setor* l){
+void lista_setor_libera(Setor* l){ 
     Setor* p = l;
     Setor* t;
     while (p != NULL) {
@@ -108,14 +108,14 @@ void lista_setor_libera(Setor* l){
     }
 }
 
-void lista_setor_imprime(Setor*a){
+void lista_setor_imprime(Setor*a){ 
 	Setor*p;
 	for(p = a; p != NULL; p = p->proximo){
 		printf("Nome: %s\t\t Descricao: %s\n", p->nome, p->descricao);
 	}
 }
 
-void lista_salvar_no_arquivo(Setor* a, char nome[]) {
+void lista_salvar_no_arquivo(Setor* a, char nome[]) { 
     FILE* file = fopen(nome, "w");
     if (file == NULL) {
         printf("Erro ao abrir o arquivo.\n");
@@ -137,7 +137,7 @@ void lista_salvar_no_arquivo(Setor* a, char nome[]) {
     fclose(file);
 }
 
-int lista_setor_vazia(Setor* a){
+int lista_setor_vazia(Setor* a){ 
 	return (a==NULL);
 }
  
