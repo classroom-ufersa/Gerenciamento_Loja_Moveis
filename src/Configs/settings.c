@@ -25,7 +25,11 @@ void settings_captalize(char *nome){
     }
 }
 
+void settings_clear(void){
+    System("clear");
+}
 
-
-
+void settings_press_enter(void){
+    while(getchar() != '\n');
+}
 

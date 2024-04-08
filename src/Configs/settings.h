@@ -17,4 +17,10 @@ void settings_limpa_buffer(void);
 
 void settings_captalize(char []);
 
+void settings_clear(void);
+
+void settings_press_enter(void);
+
+
+
 #endif //SETTINGS_H
