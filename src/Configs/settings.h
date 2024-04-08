@@ -4,14 +4,17 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <ctype.h>
+
 
 #define Max 50
 
 //Funções gerais
-void listar(void);
 
-void menu(void);
+void settings_menu(void);
 
-void limpa_buffer(void);
+void settings_limpa_buffer(void);
+
+void settings_captalize(char []);
 
 #endif //SETTINGS_H

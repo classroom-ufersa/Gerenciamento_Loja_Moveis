@@ -12,7 +12,7 @@ int main(void)
     setor = lista_ler_no_arquivo(setor, diretorio);
     do
     {
-        menu();
+        settings_menu();
         printf("Digite uma opcao: ");
         scanf("%d", &op_menu);
         switch (op_menu)
