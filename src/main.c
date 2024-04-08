@@ -2,18 +2,17 @@
 
 int main(void)
 {
-    char setor_nome[Max], setor_descricao[Max], movel_nome[Max], movel_tipo[Max]; 
+    char setor_nome[Max], setor_descricao[Max], movel_nome[Max], movel_tipo[Max], diretorio[Max];
     int op_menu, op_submenu;
     float movel_preco; 
     int movel_quantidade;
-    char diretorio[Max];
     strcpy(diretorio, "DataBase.txt");
     Setor *setor = lista_setor_cria();
     Setor *aux = lista_setor_cria();
     setor = lista_ler_no_arquivo(setor, diretorio);
     do
     {
-        menu();
+        settings_menu();
         printf("Digite uma opcao: ");
         scanf("%d", &op_menu);
         switch (op_menu)
@@ -34,11 +33,14 @@ int main(void)
                 lista_setor_imprime(setor);
                 printf("Digite o nome do setor que deseja adicionar o movel:");
                 scanf(" %[^\n]s", setor_nome);
+                settings_captalize(setor_nome);
                 aux = lista_setor_busca(setor_nome, setor);
                 printf("Digite o nome do movel:\n");
                 scanf(" %[^\n]s", movel_nome);
+                settings_captalize(movel_nome);
                 printf("Digite o tipo do movel:\n");
                 scanf(" %[^\n]s", movel_tipo);
+                settings_captalize(movel_tipo);
                 printf("Digite o preco do movel:\n");
                 scanf(" %f", &movel_preco);
                 printf("Digite o numero total de estoque:\n");
@@ -49,8 +51,10 @@ int main(void)
             case 2:
                 printf("Digite o nome do setor:\n");
                 scanf(" %[^\n]s", setor_nome);
+                settings_captalize(setor_nome);
                 printf("Digite a descricao do setor:\n");
                 scanf(" %[^\n]s", setor_descricao);
+                settings_captalize(setor_descricao);
                 setor = lista_setor_adiciona_ordenado(setor, setor_nome, setor_descricao);
                 lista_salvar_no_arquivo(setor, diretorio);
                 break;
@@ -62,92 +66,91 @@ int main(void)
         case 2: // remover movel
             printf("Digite o nome do setor que está o movel:");
             scanf(" %[^\n]s", setor_nome);
+            settings_captalize(setor_nome);
             aux = lista_setor_busca(setor_nome, setor);
             if (aux != NULL){
                 printf("Digite o nome do movel que deseja remover:");
                 scanf(" %[^\n]s", movel_nome);
+                settings_captalize(movel_nome);
                 aux->moveis = lista_movel_remove(aux->moveis, movel_nome);
             }
-            else
-            {
+            else{
                 printf("Setor não encontrado.\n");
             }
             break;
         case 3: // editar movel
             printf("Digite o nome do setor do movel:");
             scanf(" %[^\n]s", setor_nome);
+            settings_captalize(setor_nome);
             aux = lista_setor_busca(setor_nome, setor);
             printf("Digite o nome do movel que deseja editar:");
             char nome_movel_editar[Max];
             scanf(" %[^\n]s", nome_movel_editar);
+            settings_captalize(nome_movel_editar);
             printf("Digite o novo nome:");
             scanf(" %[^\n]s", movel_nome);
+            settings_captalize(movel_nome);
             printf("Digite o tipo:");
             scanf(" %[^\n]s", movel_tipo);
+            settings_captalize(movel_tipo);
             printf("Digite o preco:");
             scanf(" %f", &movel_preco);
             printf("Digite a quantidade de estoque disponivel:");
             scanf(" %d", &movel_quantidade);
             aux->moveis = lista_movel_edita(aux->moveis, nome_movel_editar, movel_nome, movel_tipo, movel_preco, movel_quantidade);
             lista_salvar_no_arquivo(setor, diretorio);
-
             break;
         case 4: // adicionar setor
             printf("Digite o nome do setor:\n");
             scanf(" %[^\n]s", setor_nome);
+            settings_captalize(setor_nome);
             printf("Digite a descricao do setor:\n");
             scanf(" %[^\n]s", setor_descricao);
+            settings_captalize(setor_descricao);
             setor = lista_setor_adiciona_ordenado(setor, setor_nome, setor_descricao);
             lista_salvar_no_arquivo(setor, diretorio);
-
             break;
         case 5: // remover setor
             printf("Digite o nome do setor que deseja remover:");
             scanf(" %[^\n]s", setor_nome);
-            if (setor != NULL)
-            {
+            settings_captalize(setor_nome);
+            if (setor != NULL){
                 setor = lista_setor_remove(setor, setor_nome);
                 printf("Setor removido com sucesso!\n");
                 lista_salvar_no_arquivo(setor, diretorio);
             }
-            else
-            {
+            else{
                 printf("Lista de setores vazia!\n");
             }
-
             break;
         case 6:
-            if (setor != NULL)
-            {
+            if (setor != NULL){
                 imprime_moveis_setor(setor);
             }
-            else
-            {
+            else{
                 printf("Lista vazia!\n");
             }
             break;
         case 7: // buscar móvel
             printf("Digite o nome do setor que está o movel: ");
             scanf(" %[^\n]s", setor_nome);
+            settings_captalize(setor_nome);
             aux = lista_setor_busca(setor_nome, aux);
-            if (aux != NULL)
-            {
+            if (aux != NULL){
                 printf("Digite o nome do movel que deseja buscar: ");
                 scanf(" %[^\n]s", movel_nome);
+                settings_captalize(movel_nome);
                 aux->moveis = lista_movel_busca(movel_nome, aux->moveis);
-                if (aux->moveis != NULL)
-                {
+                if (aux->moveis != NULL){
                     printf("Movel encontrado\n");
                     break;
                 }
-                else
-                {
+                else{
                     printf("Movel nao encontrado\n");
                     break;
                 }
             }
-            else
-            {
+            else{
                 printf("Setor nao encontrado\n");
                 break;
             }

@@ -1,6 +1,6 @@
 #include "settings.h"
 
-void menu(void){
+void settings_menu(void){
     printf("\n***************************\n");
     printf("\t\tCadastro de moveis/setores.\n");
     printf("1-Adicionar Movel\n");
@@ -13,10 +13,28 @@ void menu(void){
     printf("8-Sair\n");
     printf("***************************\n");
 }
-void limpa_buffer(void){
+void settings_limpa_buffer(void){
     int c;
     while ((c = getchar()) != '\n' && c != EOF);
 }
 
-void listar(void){};
-void upper(){};
+void settings_captalize(char *nome){
+    int tamanho = strlen(nome);
+    for (int i = 0; i < tamanho; i++){
+        nome[i] = toupper(nome[i]);
+    }
+}
+
+void settings_clear(void){
+    System("cls");
+}
+
+void settings_press_enter(void){
+    while(getchar() != '\n');
+}
+
+void settings_str_verify(char *nome){
+
+}
+
+
