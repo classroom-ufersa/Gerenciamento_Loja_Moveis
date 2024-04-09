@@ -26,20 +26,24 @@ void settings_captalize(char *nome){
 }
 
 void settings_clear(void){
-    system("clear");
+    system("cls");
 }
 
 void settings_press_enter(void){
     while(getchar() != '\n');
 }
 
-void settings_str_verify(char *nome){
-    int tamanho = strlen(nome);
-    for (int i = 0; i < tamanho; i++){
-        if (nome[i] == ' '){
-            nome[i] = '_';
+int settings_str_verify(char *nome){
+    int verificador = strlen(nome);
+    for (int i = 0; i < verificador; i++){
+        if ((nome[i] >= 'A' && nome [i] <= 'Z') || (nome[i] >= 'a' && nome[i] <= 'z') || nome[i] == ' ' || nome[i] == '.' || nome[i] == ','){
+            continue;
         }
+        else{
+            return 0;
+        }   
     }
+    return 1;
 }
 
 int settings_options(char *opcao){

@@ -21,7 +21,7 @@ void settings_clear(void);
 
 void settings_press_enter(void);
 
-void settings_str_verify(char *nome);
+int settings_str_verify(char *nome);
 
 int settings_options(char *opcao);
 
