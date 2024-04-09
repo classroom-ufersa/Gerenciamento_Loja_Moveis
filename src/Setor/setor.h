@@ -30,7 +30,7 @@ void lista_setor_libera(Setor* l);
 void lista_setor_imprime(Setor*a);
 
 // Salva os setores e moveis em um arquivo
-void lista_salvar_no_arquivo(Setor* a, char nome[]);
+void lista_escrever_no_arquivo(Setor* a, char nome[]);
 
 // Verifica se a lista de setores esta vazia
 int lista_setor_vazia(Setor* a);

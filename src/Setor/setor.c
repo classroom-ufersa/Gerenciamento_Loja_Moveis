@@ -1,8 +1,8 @@
 #include "setor.h"
 
 struct setor{ 
-    char nome[50];
-    char descricao[50];
+    char nome[Max];
+    char descricao[Max];
     Movel* moveis;
     struct setor *proximo;
 };
@@ -115,7 +115,7 @@ void lista_setor_imprime(Setor*a){
 	}
 }
 
-void lista_salvar_no_arquivo(Setor* a, char nome[]) { 
+void lista_escrever_no_arquivo(Setor* a, char nome[]) { 
     FILE* file = fopen(nome, "w");
     if (file == NULL) {
         printf("Erro ao abrir o arquivo.\n");
