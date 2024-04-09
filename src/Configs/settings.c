@@ -42,4 +42,12 @@ void settings_str_verify(char *nome){
     }
 }
 
+int settings_options(char *opcao){
+    int tamanho = strlen(opcao);
+    if (tamanho > 1){
+        return 1;
+    }
+    return 0;
+}
+
 
