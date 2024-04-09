@@ -65,7 +65,7 @@ Setor* lista_setor_remove(Setor*a, char nome[]){
     return a;
 }
 
-Setor *lista_ler_no_arquivo(Setor* a, char nome[]) { 
+Setor *lista_ler_no_arquivo(Setor* lista, char nome[]) { 
     FILE* file = fopen(nome, "r");
     if (file == NULL) {
         printf("Erro ao abrir o arquivo.\n");
@@ -78,8 +78,8 @@ Setor *lista_ler_no_arquivo(Setor* a, char nome[]) {
     while (fgets(linha, 200, file) != NULL) {
         if (strstr(linha, "Setor:") != NULL){
            sscanf(linha, "Setor:%[^\t]\t%[^\n]", setor, descricao );
-           a = lista_setor_adiciona_ordenado(a, setor, descricao);
-           aux = lista_setor_busca(setor, a);
+           lista = lista_setor_adiciona_ordenado(lista, setor, descricao);
+           aux = lista_setor_busca(setor, lista);
         }
         else{
             sscanf(linha, "Movel:%[^\t]\t%[^\t]\t%f\t%d", movel, tipo, &preco, &quantidade);
@@ -87,7 +87,7 @@ Setor *lista_ler_no_arquivo(Setor* a, char nome[]) {
         }
     }
     fclose(file);
-    return a;
+    return lista;
 }
 
 void imprime_moveis_setor(Setor*a){ 

@@ -64,7 +64,7 @@ int main(void)
             }
             break;
         case 2: // remover movel
-            printf("Digite o nome do setor que está o movel:");
+            printf("Digite o nome do setor que esta o movel:");
             scanf(" %[^\n]s", setor_nome);
             settings_captalize(setor_nome);
             aux = lista_setor_busca(setor_nome, setor);
@@ -75,7 +75,7 @@ int main(void)
                 aux->moveis = lista_movel_remove(aux->moveis, movel_nome);
             }
             else{
-                printf("Setor não encontrado.\n");
+                printf("Setor nao encontrado.\n");
             }
             break;
         case 3: // editar movel
@@ -132,7 +132,7 @@ int main(void)
             }
             break;
         case 7: // buscar móvel
-            printf("Digite o nome do setor que está o movel: ");
+            printf("Digite o nome do setor que esta o movel: ");
             scanf(" %[^\n]s", setor_nome);
             settings_captalize(setor_nome);
             aux = lista_setor_busca(setor_nome, aux);

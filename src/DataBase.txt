@@ -1,10 +1,6 @@
-Setor:AREA	Descricao:AREATESTE
+Setor:AREA	Descricao:Descricao:AREATESTE
 Movel:MESA	Tipo:TRAD	Preço:R$55.6	Quantidade em estoque:65
-Movel:YUTA	Tipo:YFDS	Preço:R$79.0	Quantidade em estoque:6236
 
-Setor:CASA	Descricao:DESC
-Movel:CADEIRA	Tipo:MADEIRA	Preço:R$2.3	Quantidade em estoque:586
-
-Setor:LABORATORIO	Descricao:LAB TESTE
-Movel:PC	Tipo:COMPUTADOR	Preço:R$989.6	Quantidade em estoque:7852
+Setor:CASA	Descricao:Descricao:DESC
+Movel:CADEIRA BONITA	Tipo:MADEIRA BOREAL	Preço:R$785.5	Quantidade em estoque:351
 
