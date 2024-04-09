@@ -27,10 +27,10 @@ int main(void)
                 {
                     if (settings_options(op_submenu) == 0)
                     {
-                    case '1':
+                    case '1': // adicionar movel a um setor existente
                         if (lista_setor_vazia(setor))
                         {
-                            printf("Setor nao encontrado");
+                            printf("Lista vazia");
                             break;
                         }
                         printf("\t\tLista de setores\n");
@@ -46,7 +46,7 @@ int main(void)
                         aux = lista_setor_busca(setor_nome, setor);
                         printf("Digite o nome do movel:\n");
                         scanf(" %[^\n]", movel_nome);
-                        if (!settings_str_verify(setor_nome))
+                        if (!settings_str_verify(movel_nome))
                         {
                             printf("Nome invalido\n");
                             break;
@@ -54,7 +54,7 @@ int main(void)
                         settings_captalize(movel_nome);
                         printf("Digite o tipo do movel:\n");
                         scanf(" %[^\n]", movel_tipo);
-                        if (!settings_str_verify(setor_nome))
+                        if (!settings_str_verify(movel_tipo))
                         {
                             printf("Nome invalido\n");
                             break;
@@ -67,7 +67,7 @@ int main(void)
                         aux->moveis = lista_movel_adiciona_ordenado(aux->moveis, movel_nome, movel_tipo, movel_preco, movel_quantidade);
                         lista_escrever_no_arquivo(setor, diretorio);
                         break;
-                    case '2':
+                    case '2': // criar setor
                         printf("Digite o nome do setor:\n");
                         scanf(" %[^\n]", setor_nome);
                         if (!settings_str_verify(setor_nome))
@@ -78,7 +78,7 @@ int main(void)
                         settings_captalize(setor_nome);
                         printf("Digite a descricao do setor:\n");
                         scanf(" %[^\n]", setor_descricao);
-                        if (!settings_str_verify(setor_nome))
+                        if (!settings_str_verify(setor_descricao))
                         {
                             printf("Nome invalido\n");
                             break;
@@ -103,20 +103,24 @@ int main(void)
                 scanf(" %[^\n]", setor_nome);
                 settings_captalize(setor_nome);
                 aux = lista_setor_busca(setor_nome, setor);
-                if (aux != NULL){
+                if (aux != NULL)
+                {
                     printf("Digite o nome do movel que deseja remover:");
                     scanf(" %[^\n]", movel_nome);
                     settings_captalize(movel_nome);
                     aux->moveis = lista_movel_remove(aux->moveis, movel_nome);
+                    lista_escrever_no_arquivo(setor, diretorio);
                 }
-                else{
+                else
+                {
                     printf("Setor nao encontrado.\n");
                 }
                 break;
             case '3': // editar movel
                 printf("Digite o nome do setor do movel:");
                 scanf(" %[^\n]", setor_nome);
-                if (!settings_str_verify(setor_nome)){
+                if (!settings_str_verify(setor_nome))
+                {
                     printf("Nome invalido\n");
                     break;
                 }
@@ -194,7 +198,7 @@ int main(void)
                     printf("Lista de setores vazia!\n");
                 }
                 break;
-            case '6':
+            case '6': //listar
                 if (setor != NULL)
                 {
                     imprime_moveis_setor(setor);
@@ -205,7 +209,7 @@ int main(void)
                 }
                 break;
             case '7': // buscar móvel
-                printf("Digite o nome do setor que esta o movel: ");
+                printf("Digite o nome do setor em que esta o movel: ");
                 scanf(" %[^\n]", setor_nome);
                 if (!settings_str_verify(setor_nome))
                 {

@@ -45,6 +45,7 @@ Setor* lista_setor_busca(char nome[], Setor* l){
             return p;
         }
     }
+    printf("Setor nao encontrado\n");
     return NULL;
 }
 
