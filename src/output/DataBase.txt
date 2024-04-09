@@ -1,12 +1,5 @@
-Setor:a	Descricao:Descricao:essfsdf
-Movel:dsfdsf	Tipo:vcbcvb	Preço:R$43.0	Quantidade em estoque:32
-Movel:fgh	Tipo:Tipo:fhg	Preço:R$0.0	Quantidade em estoque:141
-Movel:nmbnm	Tipo:Tipo:jhgjhgj	Preço:R$0.0	Quantidade em estoque:141
-Movel:nnmnm	Tipo:Tipo:vbnbvn	Preço:R$0.0	Quantidade em estoque:141
-Movel:nnmnm	Tipo:Tipo:vbnbvn	Preço:R$0.0	Quantidade em estoque:141
-
-Setor:b	Descricao:Descricao:sfdgdfgdsdf
-Movel:gfhfghfgh	Tipo:Tipo:ergergerg	Preço:R$0.0	Quantidade em estoque:141
-Movel:ugyju	Tipo:Tipo:kyukuy	Preço:R$0.0	Quantidade em estoque:141
-Movel:ugyju	Tipo:Tipo:kyukuy	Preço:R$0.0	Quantidade em estoque:141
+Setor:a	Descricao:ddddd
+Movel:aaaa	Tipo:ferfref	Preço:R$23.0	Quantidade em estoque:12
+Movel:mamamama	Tipo:dsadsdd	Preço:R$2.0	Quantidade em estoque:2
+Movel:zzzzzz	Tipo:fsdfdf	Preço:R$56.0	Quantidade em estoque:45
 

@@ -26,7 +26,7 @@ void settings_captalize(char *nome){
 }
 
 void settings_clear(void){
-    System("cls");
+    system("clear");
 }
 
 void settings_press_enter(void){
@@ -34,7 +34,12 @@ void settings_press_enter(void){
 }
 
 void settings_str_verify(char *nome){
-
+    int tamanho = strlen(nome);
+    for (int i = 0; i < tamanho; i++){
+        if (nome[i] == ' '){
+            nome[i] = '_';
+        }
+    }
 }
 
 
