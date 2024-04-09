@@ -72,7 +72,7 @@ int main(void)
                     }
                     break;
                 }
-
+                break;
             case '2': // remover movel
                 printf("Digite o nome do setor que esta o movel:");
                 scanf(" %[^\n]s", setor_nome);

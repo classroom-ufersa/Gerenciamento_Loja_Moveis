@@ -1,5 +1,0 @@
-Setor:a	Descricao:ddddd
-Movel:aaaa	Tipo:ferfref	Preço:R$23.0	Quantidade em estoque:12
-Movel:mamamama	Tipo:dsadsdd	Preço:R$2.0	Quantidade em estoque:2
-Movel:zzzzzz	Tipo:fsdfdf	Preço:R$56.0	Quantidade em estoque:45
-
