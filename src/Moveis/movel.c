@@ -25,7 +25,7 @@ Movel* lista_movel_adiciona_ordenado(Movel* Lista, char nome[], char tipo[], flo
 	}
 	novo = (Movel*) malloc(sizeof(Movel));
 	if (novo == NULL){
-		printf("Erro de alocacao");
+		printf("Erro de alocacao na lista_movel_adiciona_ordenado\n");
 		exit(1);
 	}
 	strcpy(novo->nome,nome);
@@ -40,6 +40,9 @@ Movel* lista_movel_adiciona_ordenado(Movel* Lista, char nome[], char tipo[], flo
 		novo->proximo = anterior-> proximo;
 		anterior->proximo = novo;
 	}
+	printf("Movel adicionado com sucesso\n");
+	printf("Pressione enter para continuar...");
+    settings_press_enter();
 	return Lista;
 }
 
@@ -69,6 +72,9 @@ Movel *lista_movel_remove(Movel*l, char nome[]){
     else {
         anterior->proximo = p->proximo;
 	}
+	printf("Movel removido com sucesso\n");
+	printf("Pressione enter para continuar...");
+	settings_press_enter();
     free(p);
     return l;
 }
@@ -81,6 +87,7 @@ Movel* lista_movel_edita(Movel* l, char nome_busca[], char nome[], char tipo[], 
             strcpy(p->tipo, tipo);
             p->preco = preco;
             p->qtd_estoque = qtd_estoque;
+			printf("Movel editado com sucesso\n");
             return l;
         }
     }

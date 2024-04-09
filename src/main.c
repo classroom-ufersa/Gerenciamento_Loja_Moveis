@@ -12,9 +12,11 @@ int main(void)
     setor = lista_ler_no_arquivo(setor, diretorio);
     do
     {
+        settings_clear();
         settings_menu();
         printf("Digite uma opcao: ");
         scanf(" %[^\n]", op_menu);
+        settings_clear();
         if (settings_options(op_menu) == 0)
         {
             switch (op_menu[0])
@@ -23,6 +25,7 @@ int main(void)
                 printf("\t\t Adicionar movel\n");
                 printf("1 - Adicionar movel a um setor existente\n2 - Criar novo setor\n");
                 scanf(" %[^\n]", op_submenu);
+                settings_clear();
                 switch (op_submenu[0])
                 {
                     if (settings_options(op_submenu) == 0)
@@ -31,6 +34,8 @@ int main(void)
                         if (lista_setor_vazia(setor))
                         {
                             printf("Lista vazia");
+                            printf("Pressione enter para continuar...");
+                            settings_press_enter();
                             break;
                         }
                         printf("\t\tLista de setores\n");
@@ -40,6 +45,8 @@ int main(void)
                         if (!settings_str_verify(setor_nome))
                         {
                             printf("Nome invalido\n");
+                            printf("Pressione enter para continuar...");
+                            settings_press_enter();
                             break;
                         }
                         settings_captalize(setor_nome);
@@ -49,6 +56,8 @@ int main(void)
                         if (!settings_str_verify(movel_nome))
                         {
                             printf("Nome invalido\n");
+                            printf("Pressione enter para continuar...");
+                            settings_press_enter();
                             break;
                         }
                         settings_captalize(movel_nome);
@@ -57,6 +66,8 @@ int main(void)
                         if (!settings_str_verify(movel_tipo))
                         {
                             printf("Nome invalido\n");
+                            printf("Pressione enter para continuar...");
+                            settings_press_enter();
                             break;
                         }
                         settings_captalize(movel_tipo);
@@ -73,6 +84,8 @@ int main(void)
                         if (!settings_str_verify(setor_nome))
                         {
                             printf("Nome invalido\n");
+                            printf("Pressione enter para continuar...");
+                            settings_press_enter();
                             break;
                         }
                         settings_captalize(setor_nome);
@@ -81,6 +94,8 @@ int main(void)
                         if (!settings_str_verify(setor_descricao))
                         {
                             printf("Nome invalido\n");
+                            printf("Pressione enter para continuar...");
+                            settings_press_enter();
                             break;
                         }
                         settings_captalize(setor_descricao);
@@ -99,12 +114,23 @@ int main(void)
                 }
                 break;
             case '2': // remover movel
+                settings_clear();
+                if (lista_setor_vazia(setor))
+                {
+                    printf("Lista vazia");
+                    printf("Pressione enter para continuar...");
+                    settings_press_enter();
+                    break;
+                }
+                printf("\t\tLista de setores\n");
+                lista_setor_imprime(setor);
                 printf("Digite o nome do setor que esta o movel:");
                 scanf(" %[^\n]", setor_nome);
                 settings_captalize(setor_nome);
                 aux = lista_setor_busca(setor_nome, setor);
                 if (aux != NULL)
                 {
+                    lista_movel_imprime(aux->moveis);
                     printf("Digite o nome do movel que deseja remover:");
                     scanf(" %[^\n]", movel_nome);
                     settings_captalize(movel_nome);
@@ -113,41 +139,65 @@ int main(void)
                 }
                 else
                 {
+                    settings_clear();
                     printf("Setor nao encontrado.\n");
+                    printf("Pressione enter para continuar...");
+                    settings_press_enter();
+
                 }
                 break;
             case '3': // editar movel
+                settings_clear();
+                if (lista_setor_vazia(setor))
+                {
+                    printf("Lista vazia");
+                    printf("Pressione enter para continuar...");
+                    settings_press_enter();
+                    break;
+                }
+                printf("\t\tLista de setores\n");
+                lista_setor_imprime(setor);
                 printf("Digite o nome do setor do movel:");
                 scanf(" %[^\n]", setor_nome);
                 if (!settings_str_verify(setor_nome))
                 {
                     printf("Nome invalido\n");
+                    printf("Pressione enter para continuar...");
+                    settings_press_enter();
                     break;
                 }
                 settings_captalize(setor_nome);
                 aux = lista_setor_busca(setor_nome, setor);
-                printf("Digite o nome do movel que deseja editar:");
+                lista_movel_imprime(aux->moveis);
+                printf("\nDigite o nome do movel que deseja editar:");
                 char nome_movel_editar[Max];
                 scanf(" %[^\n]", nome_movel_editar);
                 if (!settings_str_verify(setor_nome))
                 {
                     printf("Nome invalido\n");
+                    printf("Pressione enter para continuar...");
+                    settings_press_enter();
                     break;
                 }
                 settings_captalize(nome_movel_editar);
+                settings_clear();
                 printf("Digite o novo nome:");
                 scanf(" %[^\n]", movel_nome);
-                if (!settings_str_verify(setor_nome))
+                if (!settings_str_verify(movel_nome))
                 {
                     printf("Nome invalido\n");
+                    printf("Pressione enter para continuar...");
+                    settings_press_enter();
                     break;
                 }
                 settings_captalize(movel_nome);
                 printf("Digite o tipo:");
                 scanf(" %[^\n]", movel_tipo);
-                if (!settings_str_verify(setor_nome))
+                if (!settings_str_verify(movel_tipo))
                 {
                     printf("Nome invalido\n");
+                    printf("Pressione enter para continuar...");
+                    settings_press_enter();
                     break;
                 }
                 settings_captalize(movel_tipo);
@@ -164,14 +214,18 @@ int main(void)
                 if (!settings_str_verify(setor_nome))
                 {
                     printf("Nome invalido\n");
+                    printf("Pressione enter para continuar...");
+                    settings_press_enter();
                     break;
                 }
                 settings_captalize(setor_nome);
                 printf("Digite a descricao do setor:\n");
                 scanf(" %[^\n]", setor_descricao);
-                if (!settings_str_verify(setor_nome))
+                if (!settings_str_verify(setor_descricao))
                 {
                     printf("Nome invalido\n");
+                    printf("Pressione enter para continuar...");
+                    settings_press_enter();
                     break;
                 }
                 settings_captalize(setor_descricao);
@@ -179,18 +233,29 @@ int main(void)
                 lista_escrever_no_arquivo(setor, diretorio);
                 break;
             case '5': // remover setor
+                if (lista_setor_vazia(setor))
+                {
+                    printf("Lista vazia");
+                    printf("Pressione enter para continuar...");
+                    settings_press_enter();
+                    break;
+                }
+                settings_clear();
+                printf("\t\tLista de setores\n");
+                lista_setor_imprime(setor);
                 printf("Digite o nome do setor que deseja remover:");
                 scanf(" %[^\n]", setor_nome);
                 if (!settings_str_verify(setor_nome))
                 {
                     printf("Nome invalido\n");
+                    printf("Pressione enter para continuar...");
+                    settings_press_enter();
                     break;
                 }
                 settings_captalize(setor_nome);
                 if (setor != NULL)
                 {
                     setor = lista_setor_remove(setor, setor_nome);
-                    printf("Setor removido com sucesso!\n");
                     lista_escrever_no_arquivo(setor, diretorio);
                 }
                 else
@@ -199,7 +264,7 @@ int main(void)
                 }
                 break;
             case '6': //listar
-                if (setor != NULL)
+                if (!lista_setor_vazia(setor))
                 {
                     imprime_moveis_setor(setor);
                 }
@@ -209,11 +274,22 @@ int main(void)
                 }
                 break;
             case '7': // buscar móvel
-                printf("Digite o nome do setor em que esta o movel: ");
+                if (lista_setor_vazia(setor))
+                {
+                    printf("Lista vazia");
+                    printf("Pressione enter para continuar...");
+                    settings_press_enter();
+                    break;
+                }
+                printf("\t\tLista de setores\n");
+                lista_setor_imprime(setor);
+                printf("\nDigite o nome do setor em que esta o movel: ");
                 scanf(" %[^\n]", setor_nome);
                 if (!settings_str_verify(setor_nome))
                 {
                     printf("Nome invalido\n");
+                    printf("Pressione enter para continuar...");
+                    settings_press_enter();
                     break;
                 }
                 settings_captalize(setor_nome);
@@ -225,6 +301,8 @@ int main(void)
                     if (!settings_str_verify(movel_nome))
                     {
                         printf("Nome invalido\n");
+                        printf("Pressione enter para continuar...");
+                        settings_press_enter();
                         break;
                     }
                     settings_captalize(movel_nome);

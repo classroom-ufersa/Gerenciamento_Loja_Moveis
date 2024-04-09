@@ -35,6 +35,9 @@ Setor* lista_setor_adiciona_ordenado(Setor* Lista, char nome[], char descricao[]
         novo->proximo = anterior-> proximo;
         anterior->proximo = novo;
     }
+    printf("Setor adicionado com sucesso\n");
+    printf("Pressione enter para continuar...");
+    settings_press_enter();
     return Lista;
 }
 
@@ -60,8 +63,12 @@ Setor* lista_setor_remove(Setor*a, char nome[]){
     }
     if (anterior==NULL)
         a = p->proximo;
-    else
+    else{
         anterior->proximo = p->proximo;
+        printf("Setor removido com sucesso\n");
+        printf("Pressione enter para continuar...");
+        settings_press_enter();
+    }
     free(p);
     return a;
 }
@@ -96,6 +103,7 @@ void imprime_moveis_setor(Setor*a){
 	for(p = a; p != NULL; p = p->proximo){
 		printf("Setor: %s\t\t%s\n", p->nome, p->descricao);
         lista_movel_imprime(p->moveis);
+        settings_press_enter();
 	}
 }
 
