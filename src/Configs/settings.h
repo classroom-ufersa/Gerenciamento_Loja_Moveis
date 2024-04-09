@@ -23,6 +23,8 @@ void settings_press_enter(void);
 
 void settings_str_verify(char *nome);
 
+int settings_options(char *opcao);
+
 
 
 #endif //SETTINGS_H

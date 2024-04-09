@@ -1,6 +1,4 @@
 Setor:AREA	Descricao:Descricao:AREATESTE
 Movel:MESA	Tipo:TRAD	Preço:R$55.6	Quantidade em estoque:65
-
 Setor:CASA	Descricao:Descricao:DESC
 Movel:CADEIRA BONITA	Tipo:MADEIRA BOREAL	Preço:R$785.5	Quantidade em estoque:351
-
