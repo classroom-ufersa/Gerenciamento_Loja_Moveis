@@ -41,8 +41,6 @@ Movel* lista_movel_adiciona_ordenado(Movel* Lista, char nome[], char tipo[], flo
 		anterior->proximo = novo;
 	}
 	printf("Movel adicionado com sucesso\n");
-	printf("Pressione enter para continuar...");
-    settings_press_enter();
 	return Lista;
 }
 

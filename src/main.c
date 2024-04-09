@@ -293,7 +293,7 @@ int main(void)
                     break;
                 }
                 settings_captalize(setor_nome);
-                aux = lista_setor_busca(setor_nome, aux);
+                aux = lista_setor_busca(setor_nome, setor);
                 if (aux != NULL)
                 {
                     printf("Digite o nome do movel que deseja buscar: ");
@@ -325,17 +325,14 @@ int main(void)
                     break;
                 }
             case '8': // sair
-                printf("Programa encerrado");
-                return 0;
                 break;
             default:
                 printf("Digite uma opcao valida...");
                 break;
             }
         }
-        else
-        {
-            printf("Digite uma opcao valida...");
-        }
+        else printf("Digite uma opcao valida...");
     } while (op_menu[0] != '8');
+    printf("Programa encerrado");
+    return 0;
 }

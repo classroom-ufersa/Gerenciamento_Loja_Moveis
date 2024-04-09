@@ -56,18 +56,20 @@ Setor* lista_setor_remove(Setor*a, char nome[]){
 	Setor *anterior = NULL; 
     Setor *p = a;
     while(strcmp(p->nome, nome) !=0){
-    	if (p==NULL)
+    	if (p==NULL){
+            printf("Setor nao encontrado\n");
         	return a;
+        }
         anterior = p;
         p = p->proximo;
     }
-    if (anterior==NULL)
+    if (anterior==NULL){
         a = p->proximo;
+        printf("Setor removido com sucesso\n");
+        settings_press_enter();
+    }
     else{
         anterior->proximo = p->proximo;
-        printf("Setor removido com sucesso\n");
-        printf("Pressione enter para continuar...");
-        settings_press_enter();
     }
     free(p);
     return a;
