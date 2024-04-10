@@ -44,8 +44,6 @@ int main(void)
                         if (!settings_str_verify(setor_nome))
                         {
                             printf("Nome invalido\n");
-                            printf("Pressione enter para continuar...");
-                            settings_press_enter();
                             break;
                         }
                         settings_captalize(setor_nome);
@@ -55,8 +53,6 @@ int main(void)
                         if (!settings_str_verify(movel_nome))
                         {
                             printf("Nome invalido\n");
-                            printf("Pressione enter para continuar...");
-                            settings_press_enter();
                             break;
                         }
                         settings_captalize(movel_nome);
@@ -65,8 +61,6 @@ int main(void)
                         if (!settings_str_verify(movel_tipo))
                         {
                             printf("Nome invalido\n");
-                            printf("Pressione enter para continuar...");
-                            settings_press_enter();
                             break;
                         }
                         settings_captalize(movel_tipo);
@@ -83,8 +77,6 @@ int main(void)
                         if (!settings_str_verify(setor_nome))
                         {
                             printf("Nome invalido\n");
-                            printf("Pressione enter para continuar...");
-                            settings_press_enter();
                             break;
                         }
                         settings_captalize(setor_nome);
@@ -93,8 +85,6 @@ int main(void)
                         if (!settings_str_verify(setor_descricao))
                         {
                             printf("Nome invalido\n");
-                            printf("Pressione enter para continuar...");
-                            settings_press_enter();
                             break;
                         }
                         settings_captalize(setor_descricao);
@@ -117,8 +107,6 @@ int main(void)
                 if (lista_setor_vazia(setor))
                 {
                     printf("Lista vazia");
-                    printf("Pressione enter para continuar...");
-                    settings_press_enter();
                     break;
                 }
                 printf("\t\tLista de setores\n");
@@ -140,9 +128,6 @@ int main(void)
                 {
                     settings_clear();
                     printf("Setor nao encontrado.\n");
-                    printf("Pressione enter para continuar...");
-                    settings_press_enter();
-
                 }
                 break;
             case '3': // editar movel
@@ -150,8 +135,6 @@ int main(void)
                 if (lista_setor_vazia(setor))
                 {
                     printf("Lista vazia");
-                    printf("Pressione enter para continuar...");
-                    settings_press_enter();
                     break;
                 }
                 printf("\t\tLista de setores\n");
@@ -161,8 +144,6 @@ int main(void)
                 if (!settings_str_verify(setor_nome))
                 {
                     printf("Nome invalido\n");
-                    printf("Pressione enter para continuar...");
-                    settings_press_enter();
                     break;
                 }
                 settings_captalize(setor_nome);
@@ -174,8 +155,6 @@ int main(void)
                 if (!settings_str_verify(setor_nome))
                 {
                     printf("Nome invalido\n");
-                    printf("Pressione enter para continuar...");
-                    settings_press_enter();
                     break;
                 }
                 settings_captalize(nome_movel_editar);
@@ -185,8 +164,6 @@ int main(void)
                 if (!settings_str_verify(movel_nome))
                 {
                     printf("Nome invalido\n");
-                    printf("Pressione enter para continuar...");
-                    settings_press_enter();
                     break;
                 }
                 settings_captalize(movel_nome);
@@ -195,8 +172,6 @@ int main(void)
                 if (!settings_str_verify(movel_tipo))
                 {
                     printf("Nome invalido\n");
-                    printf("Pressione enter para continuar...");
-                    settings_press_enter();
                     break;
                 }
                 settings_captalize(movel_tipo);
@@ -213,8 +188,6 @@ int main(void)
                 if (!settings_str_verify(setor_nome))
                 {
                     printf("Nome invalido\n");
-                    printf("Pressione enter para continuar...");
-                    settings_press_enter();
                     break;
                 }
                 settings_captalize(setor_nome);
@@ -223,8 +196,6 @@ int main(void)
                 if (!settings_str_verify(setor_descricao))
                 {
                     printf("Nome invalido\n");
-                    printf("Pressione enter para continuar...");
-                    settings_press_enter();
                     break;
                 }
                 settings_captalize(setor_descricao);
@@ -247,8 +218,6 @@ int main(void)
                 if (!settings_str_verify(setor_nome))
                 {
                     printf("Nome invalido\n");
-                    printf("Pressione enter para continuar...");
-                    settings_press_enter();
                     break;
                 }
                 settings_captalize(setor_nome);
@@ -276,8 +245,6 @@ int main(void)
                 if (lista_setor_vazia(setor))
                 {
                     printf("Lista vazia");
-                    printf("Pressione enter para continuar...");
-                    settings_press_enter();
                     break;
                 }
                 printf("\t\tLista de setores\n");
@@ -287,8 +254,6 @@ int main(void)
                 if (!settings_str_verify(setor_nome))
                 {
                     printf("Nome invalido\n");
-                    printf("Pressione enter para continuar...");
-                    settings_press_enter();
                     break;
                 }
                 settings_captalize(setor_nome);
@@ -300,8 +265,6 @@ int main(void)
                     if (!settings_str_verify(movel_nome))
                     {
                         printf("Nome invalido\n");
-                        printf("Pressione enter para continuar...");
-                        settings_press_enter();
                         break;
                     }
                     settings_captalize(movel_nome);
