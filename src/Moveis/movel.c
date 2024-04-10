@@ -44,8 +44,8 @@ Movel* lista_movel_adiciona_ordenado(Movel* Lista, char nome[], char tipo[], flo
 	return Lista;
 }
 
-Movel *lista_movel_busca(char nome[], Movel* l){
-	Movel *p = l;
+Movel *lista_movel_busca(char nome[], Movel* lista){
+	Movel *p = lista;
 	for(p; p!=NULL; p=p->proximo){
 		if(strcmp(nome, p->nome) == 0){
 			return p;
@@ -54,18 +54,18 @@ Movel *lista_movel_busca(char nome[], Movel* l){
 	return NULL;
 }
 
-Movel *lista_movel_remove(Movel*l, char nome[]){
+Movel *lista_movel_remove(Movel* lista, char nome[]){
 	Movel* anterior = NULL; 
-    Movel* p = l;
+    Movel* p = lista;
     while(strcmp(p->nome,nome)!=0){
     	if (p==NULL){
-        	return l;
+        	return lista;
 		}
         anterior = p;
         p = p->proximo;
     }
     if (anterior==NULL){
-        l = p->proximo;
+        lista = p->proximo;
 	}	
     else {
         anterior->proximo = p->proximo;
@@ -74,37 +74,37 @@ Movel *lista_movel_remove(Movel*l, char nome[]){
 	printf("Pressione enter para continuar...");
 	settings_press_enter();
     free(p);
-    return l;
+    return lista;
 }
 
-Movel* lista_movel_edita(Movel* l, char nome_busca[], char nome[], char tipo[], float preco, int qtd_estoque) { 
+Movel* lista_movel_edita(Movel* lista, char nome_busca[], char nome[], char tipo[], float preco, int qtd_estoque) { 
 	Movel *p;
-    for (p = l; p != NULL; p = p->proximo) {
+    for (p = lista; p != NULL; p = p->proximo) {
         if (strcmp(nome_busca, p->nome) == 0) {
             strcpy(p->nome, nome);
             strcpy(p->tipo, tipo);
             p->preco = preco;
             p->qtd_estoque = qtd_estoque;
 			printf("Movel editado com sucesso\n");
-            return l;
+            return lista;
         }
     }
-    return l;
+    return lista;
 }
 
-int lista_movel_vazia(Movel* l){ 
-	return (l==NULL);
+int lista_movel_vazia(Movel* lista){ 
+	return (lista==NULL);
 }
 
-void lista_movel_imprime(Movel*l){ 
+void lista_movel_imprime(Movel* lista){ 
 	Movel*p;
-	for(p = l; p != NULL; p = p->proximo){
+	for(p = lista; p != NULL; p = p->proximo){
 		printf("Movel: %s\t\tPreco:R$%.1f\t\tTipo: %s\t\tQuantidade em estoque:%d\n", p->nome, p->preco,p->tipo, p->qtd_estoque);
 	}
 }
  
-void lista_movel_libera(Movel** l){
-    Movel* p = *l;
+void lista_movel_libera(Movel* lista){
+    Movel* p = lista;
     Movel* t;
     while (p != NULL) {
         t = p->proximo;

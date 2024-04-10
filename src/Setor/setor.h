@@ -12,27 +12,27 @@ Setor* lista_setor_cria(void);
 Setor* lista_setor_adiciona_ordenado(Setor* Lista, char nome[], char descricao[]);
 
 // Busca um setor na lista
-Setor* lista_setor_busca(char nome[], Setor* l);
+Setor* lista_setor_busca(char nome[], Setor* lista);
 
 // Remove um setor da lista
-Setor* lista_setor_remove(Setor*a, char nome[]);
+Setor* lista_setor_remove(Setor*lista, char nome[]);
 
 // Le um arquivo e salva os setores e moveis
-Setor *lista_ler_no_arquivo(Setor* a, char nome[]);
+Setor *lista_ler_no_arquivo(Setor* lista, char nome[]);
 
 // Imprime os moveis de um setor
-void imprime_moveis_setor(Setor*a);
+void imprime_moveis_setor(Setor* lista);
 
-// Libera a lista de setores
-void lista_setor_libera(Setor* l);
+// Libera lista lista de setores
+void lista_setor_libera(Setor* lista);
 
-// Imprime a lista de setores
-void lista_setor_imprime(Setor*a);
+// Imprime lista lista de setores
+void lista_setor_imprime(Setor* lista);
 
 // Salva os setores e moveis em um arquivo
-void lista_escrever_no_arquivo(Setor* a, char nome[]);
+void lista_escrever_no_arquivo(Setor* lista, char nome[]);
 
-// Verifica se a lista de setores esta vazia
-int lista_setor_vazia(Setor* a);
+// Verifica se lista lista de setores esta vazia
+int lista_setor_vazia(Setor* lista);
 
 #endif //SETOR_H

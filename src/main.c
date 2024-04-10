@@ -6,7 +6,7 @@ int main(void)
     char op_menu[Max], op_submenu[Max];
     float movel_preco;
     int movel_quantidade;
-    strcpy(diretorio, "TesteBase.txt");
+    strcpy(diretorio, "DataBase.txt");
     Setor *setor = lista_setor_cria();
     Setor *aux = lista_setor_cria();
     setor = lista_ler_no_arquivo(setor, diretorio);

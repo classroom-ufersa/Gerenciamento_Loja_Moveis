@@ -15,13 +15,13 @@ void settings_menu(void);
 
 void settings_limpa_buffer(void);
 
-void settings_captalize(char *nome);
+void settings_captalize(char * string);
 
 void settings_clear(void);
 
 void settings_press_enter(void);
 
-int settings_str_verify(char *nome);
+int settings_str_verify(char *string);
 
 int settings_options(char *opcao);
 

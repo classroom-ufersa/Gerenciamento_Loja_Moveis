@@ -19,10 +19,10 @@ void settings_limpa_buffer(void){
     while ((c = getchar()) != '\n' && c != EOF);
 }
 
-void settings_captalize(char *nome){
-    int tamanho = strlen(nome);
+void settings_captalize(char *string){
+    int tamanho = strlen(string);
     for (int i = 0; i < tamanho; i++){
-        nome[i] = toupper(nome[i]);
+        string[i] = toupper(string[i]);
     }
 }
 
@@ -34,10 +34,10 @@ void settings_press_enter(void){
     while(getchar() != '\n');
 }
 
-int settings_str_verify(char *nome){
-    int verificador = strlen(nome);
+int settings_str_verify(char *string){
+    int verificador = strlen(string);
     for (int i = 0; i < verificador; i++){
-        if ((nome[i] >= 'A' && nome [i] <= 'Z') || (nome[i] >= 'a' && nome[i] <= 'z') || nome[i] == ' '){
+        if ((string[i] >= 'A' && string [i] <= 'Z') || (string[i] >= 'a' && string[i] <= 'z') || string[i] == ' '){
             continue;
         }
         else{

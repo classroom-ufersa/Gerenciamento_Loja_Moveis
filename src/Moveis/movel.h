@@ -12,21 +12,21 @@ Movel* lista_movel_cria(void);
 Movel* lista_movel_adiciona_ordenado(Movel* Lista, char nome[], char tipo[], float preco, int qtd_estoque);
 
 // Busca um movel na lista
-Movel* lista_movel_busca(char nome[], Movel* l);
+Movel* lista_movel_busca(char nome[], Movel* lista);
 
 // Remove um movel da lista
-Movel* lista_movel_remove(Movel*l, char nome[]);
+Movel* lista_movel_remove(Movel* lista, char nome[]);
 
 // Edita um movel da lista
-Movel* lista_movel_edita(Movel* l, char nome_busca[], char nome[], char tipo[], float preco, int qdt_estoque);
+Movel* lista_movel_edita(Movel* lista, char nome_busca[], char nome[], char tipo[], float preco, int qdt_estoque);
 
 // Verifica se a lista de moveis esta vazia
-int lista_movel_vazia(Movel* l);
+int lista_movel_vazia(Movel* lista);
 
 // Imprime a lista de moveis
-void lista_movel_imprime(Movel*l);
+void lista_movel_imprime(Movel* lista);
 
 // Libera a lista de moveis
-void lista_movel_libera(Movel** l);
+void lista_movel_libera(Movel* lista);
 
 #endif // MOVEL_H
