@@ -37,7 +37,7 @@ void settings_press_enter(void){
 int settings_str_verify(char *nome){
     int verificador = strlen(nome);
     for (int i = 0; i < verificador; i++){
-        if ((nome[i] >= 'A' && nome [i] <= 'Z') || (nome[i] >= 'a' && nome[i] <= 'z') || nome[i] == ' ' || nome[i] == '.' || nome[i] == ','){
+        if ((nome[i] >= 'A' && nome [i] <= 'Z') || (nome[i] >= 'a' && nome[i] <= 'z') || nome[i] == ' '){
             continue;
         }
         else{
