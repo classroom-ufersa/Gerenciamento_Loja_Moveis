@@ -12,7 +12,6 @@ int main(void)
     setor = lista_ler_no_arquivo(setor, diretorio);
     do
     {
-        settings_clear();
         settings_menu();
         printf("Digite uma opcao: ");
         scanf(" %[^\n]", op_menu);
@@ -309,8 +308,8 @@ int main(void)
                     aux->moveis = lista_movel_busca(movel_nome, aux->moveis);
                     if (aux->moveis != NULL)
                     {
-                        printf("Movel encontrado\n");
-                        printf("Nome: %s\tTipo: %s\tPreco: %.2f\tQuantidade: %d\n", aux->moveis->nome, aux->moveis->tipo, aux->moveis->preco, aux->moveis->qtd_estoque);
+                        printf(" Movel encontrado\n");
+                        printf(" Nome: %s\tTipo: %s\tPreco: %.2f\tQuantidade: %d\n", aux->moveis->nome, aux->moveis->tipo, aux->moveis->preco, aux->moveis->qtd_estoque);
                         break;
                     }
                     else
