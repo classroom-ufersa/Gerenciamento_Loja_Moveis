@@ -103,7 +103,7 @@ void imprime_moveis_setor(Setor* lista){
 	for(p = lista; p != NULL; p = p->proximo){
 		printf("Setor: %s\t\t%s\n", p->nome, p->descricao);
         lista_movel_imprime(p->moveis);
-        settings_press_enter();
+        printf("\n");
 	}
 }
 
