@@ -36,8 +36,6 @@ Setor* lista_setor_adiciona_ordenado(Setor* Lista, char nome[], char descricao[]
         anterior->proximo = novo;
     }
     printf("Setor adicionado com sucesso\n");
-    printf("Pressione enter para continuar...");
-    settings_press_enter();
     return Lista;
 }
 
