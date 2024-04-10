@@ -305,7 +305,7 @@ int main(void)
                         break;
                     }
                     settings_captalize(movel_nome);
-                    aux->moveis = lista_movel_busca(movel_nome, aux->moveis);
+                    aux->moveis = lista_movel_busca(aux->moveis, movel_nome);
                     if (aux->moveis != NULL)
                     {
                         printf(" Movel encontrado\n");

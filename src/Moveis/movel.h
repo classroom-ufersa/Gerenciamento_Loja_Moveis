@@ -12,7 +12,7 @@ Movel* lista_movel_cria(void);
 Movel* lista_movel_adiciona_ordenado(Movel* Lista, char nome[], char tipo[], float preco, int qtd_estoque);
 
 // Busca um movel na lista
-Movel* lista_movel_busca(char nome[], Movel* lista);
+Movel* lista_movel_busca(Movel* lista, char nome[]);
 
 // Remove um movel da lista
 Movel* lista_movel_remove(Movel* lista, char nome[]);

@@ -44,7 +44,7 @@ Movel* lista_movel_adiciona_ordenado(Movel* Lista, char nome[], char tipo[], flo
 	return Lista;
 }
 
-Movel *lista_movel_busca(char nome[], Movel* lista){
+Movel *lista_movel_busca(Movel* lista, char nome[]){
 	Movel *p = lista;
 	for(p; p!=NULL; p=p->proximo){
 		if(strcmp(nome, p->nome) == 0){
