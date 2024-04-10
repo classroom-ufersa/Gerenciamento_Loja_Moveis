@@ -2,14 +2,14 @@
 
 int main(void)
 {
-    char setor_nome[Max], setor_descricao[Max], movel_nome[Max], movel_tipo[Max], diretorio[Max];
+    char setor_nome[Max], setor_descricao[Max], movel_nome[Max], movel_tipo[Max], arquivo[Max];
     char op_menu[Max], op_submenu[Max];
     float movel_preco;
     int movel_quantidade;
-    strcpy(diretorio, "DataBase.txt");
+    strcpy(arquivo, "DataBase.txt"); //strcpy(arquivo, "TesteBase.txt"); para testes no arquivo vazio
     Setor *setor = lista_setor_cria();
     Setor *aux = lista_setor_cria();
-    setor = lista_ler_no_arquivo(setor, diretorio);
+    setor = lista_ler_no_arquivo(setor, arquivo);
     do
     {
         settings_menu();
@@ -75,7 +75,7 @@ int main(void)
                         printf("Digite o numero total de estoque:\n");
                         scanf(" %d", &movel_quantidade);
                         aux->moveis = lista_movel_adiciona_ordenado(aux->moveis, movel_nome, movel_tipo, movel_preco, movel_quantidade);
-                        lista_escrever_no_arquivo(setor, diretorio);
+                        lista_escrever_no_arquivo(setor, arquivo);
                         break;
                     case '2': // criar setor
                         printf("Digite o nome do setor:\n");
@@ -99,7 +99,7 @@ int main(void)
                         }
                         settings_captalize(setor_descricao);
                         setor = lista_setor_adiciona_ordenado(setor, setor_nome, setor_descricao);
-                        lista_escrever_no_arquivo(setor, diretorio);
+                        lista_escrever_no_arquivo(setor, arquivo);
                         break;
                     default:
                         printf("Opcao invalida");
@@ -134,7 +134,7 @@ int main(void)
                     scanf(" %[^\n]", movel_nome);
                     settings_captalize(movel_nome);
                     aux->moveis = lista_movel_remove(aux->moveis, movel_nome);
-                    lista_escrever_no_arquivo(setor, diretorio);
+                    lista_escrever_no_arquivo(setor, arquivo);
                 }
                 else
                 {
@@ -205,7 +205,7 @@ int main(void)
                 printf("Digite a quantidade de estoque disponivel:");
                 scanf(" %d", &movel_quantidade);
                 aux->moveis = lista_movel_edita(aux->moveis, nome_movel_editar, movel_nome, movel_tipo, movel_preco, movel_quantidade);
-                lista_escrever_no_arquivo(setor, diretorio);
+                lista_escrever_no_arquivo(setor, arquivo);
                 break;
             case '4': // adicionar setor
                 printf("Digite o nome do setor:\n");
@@ -229,7 +229,7 @@ int main(void)
                 }
                 settings_captalize(setor_descricao);
                 setor = lista_setor_adiciona_ordenado(setor, setor_nome, setor_descricao);
-                lista_escrever_no_arquivo(setor, diretorio);
+                lista_escrever_no_arquivo(setor, arquivo);
                 break;
             case '5': // remover setor
                 if (lista_setor_vazia(setor))
@@ -255,7 +255,7 @@ int main(void)
                 if (setor != NULL)
                 {
                     setor = lista_setor_remove(setor, setor_nome);
-                    lista_escrever_no_arquivo(setor, diretorio);
+                    lista_escrever_no_arquivo(setor, arquivo);
                 }
                 else
                 {
