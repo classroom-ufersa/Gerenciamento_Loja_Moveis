@@ -253,3 +253,8 @@ case '8': //main.c
     } while (op_menu[0] != '8');
     printf("Programa encerrado");
 ```
+
+## Desenvolvedores
+>[Marcelo Henrique 🥇](https://github.com/marcelohenrique0)
+>
+>[Nattan Ferreira 🥇](https://github.com/NattanFerreira)
