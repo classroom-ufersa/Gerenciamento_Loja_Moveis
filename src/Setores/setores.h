@@ -1,7 +1,7 @@
 #ifndef SETOR_H
 #define SETOR_H
 
-#include "../Moveis/movel.c"
+#include "../Moveis/moveis.c"
 
 typedef struct setor Setor;
 

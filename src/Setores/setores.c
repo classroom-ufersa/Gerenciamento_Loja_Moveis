@@ -1,4 +1,4 @@
-#include "setor.h"
+#include "setores.h"
 
 struct setor{ 
     char nome[Max];

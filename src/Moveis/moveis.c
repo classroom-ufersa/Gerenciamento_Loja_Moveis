@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "movel.h"
+#include "moveis.h"
 
 struct movel { 
     char nome[Max];
