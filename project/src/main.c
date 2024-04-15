@@ -24,6 +24,12 @@ int main(void)
                 printf("\t\t Adicionar movel\n");
                 printf("1 - Adicionar movel a um setor existente\n2 - Criar novo setor\n");
                 scanf(" %[^\n]", op_submenu);
+                if (strlen(op_submenu) > 1)
+                {
+                    printf("Digite uma opcao valida...\n");
+                    break;
+                }
+                
                 settings_clear();
                 switch (op_submenu[0])
                 {
