@@ -193,8 +193,16 @@ int main(void)
                 settings_captalize(movel_tipo);
                 printf("Digite o preco:");
                 scanf(" %f", &movel_preco);
+                if (movel_preco < 0){
+                    printf("valor invalido");
+                    break;
+                }
                 printf("Digite a quantidade de estoque disponivel:");
                 scanf(" %d", &movel_quantidade);
+                if (movel_quantidade < 0){
+                    printf("valor invalido");
+                    break;
+                }
                 aux->moveis = lista_movel_edita(aux->moveis, nome_movel_editar, movel_nome, movel_tipo, movel_preco, movel_quantidade);
                 lista_escrever_no_arquivo(setor, arquivo);
                 break;
