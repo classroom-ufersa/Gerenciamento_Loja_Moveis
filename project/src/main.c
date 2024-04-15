@@ -240,7 +240,11 @@ int main(void)
             case '6': //listar
                 if (!lista_setor_vazia(setor))
                 {
+                    settings_clear();
                     imprime_moveis_setor(setor);
+                    settings_press_enter();
+                    settings_clear();
+                    
                 }
                 else
                 {
@@ -293,14 +297,15 @@ int main(void)
                     break;
                 }
             case '8': // sair
+                printf("Saindo...\n");
                 break;
             default:
-                printf("Digite uma opcao valida...");
+                printf("Digite uma opcao valida....");
                 break;
             }
         }
         else printf("Digite uma opcao valida...");
-    } while (op_menu[0] != '8');
+    } while (op_menu[0] != '8' && settings_options(op_menu) != 1);
     printf("Programa encerrado");
     return 0;
 }

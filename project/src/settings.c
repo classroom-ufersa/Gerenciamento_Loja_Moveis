@@ -27,10 +27,16 @@ void settings_captalize(char *string){
 }
 
 void settings_clear(void){
-    system("cls");
+    #ifdef _WIN32
+        system("cls");
+    #elif __APPLE__
+        system("clear");
+    #elif __linux__
+        system("clear");
+    #endif
 }
-
 void settings_press_enter(void){
+    settings_limpa_buffer();    
     while(getchar() != '\n');
 }
 
