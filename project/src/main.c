@@ -74,6 +74,10 @@ int main(void)
                         settings_captalize(movel_tipo);
                         printf("Digite o preco do movel:\n");
                         scanf(" %f", &movel_preco);
+                        if (movel_preco < 0){
+                            printf("valor invalido");
+                            break;
+                        }
                         printf("Digite o numero total de estoque:\n");
                         scanf(" %d", &movel_quantidade);
                         aux->moveis = lista_movel_adiciona_ordenado(aux->moveis, movel_nome, movel_tipo, movel_preco, movel_quantidade);
