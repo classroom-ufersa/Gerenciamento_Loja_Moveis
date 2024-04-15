@@ -6,7 +6,7 @@
 #ifndef SETOR_H
 #define SETOR_H
 
-#include "../Moveis/moveis.c"
+#include "../src/moveis.c"
 
 /**
  * @struct setor

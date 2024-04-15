@@ -6,7 +6,7 @@
 #ifndef MOVEL_H
 #define MOVEL_H
 
-#include "../Configs/settings.c"
+#include "../src/settings.c"
 
 /**
  * @struct movel
