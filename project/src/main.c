@@ -164,6 +164,9 @@ int main(void)
                 }
                 settings_captalize(setor_nome);
                 aux = lista_setor_busca(setor_nome, setor);
+                if (setor_nome != 0){
+                    break;
+                }
                 lista_movel_imprime(aux->moveis);
                 printf("\nDigite o nome do movel que deseja editar:");
                 char nome_movel_editar[Max];
