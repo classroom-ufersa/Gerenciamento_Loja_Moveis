@@ -10,14 +10,16 @@ int main(void)
     Setor *setor = lista_setor_cria();
     Setor *aux = lista_setor_cria();
     setor = lista_ler_no_arquivo(setor, arquivo);
+    settings_clear();
     do
     {
-        settings_menu();
-        printf("Digite uma opcao: ");
-        scanf(" %[^\n]", op_menu);
-        settings_clear();
-        if (settings_options(op_menu) == 0)
+        do
         {
+            settings_menu();
+            printf("Digite uma opcao: ");
+            scanf(" %[^\n]", op_menu);
+            settings_clear();
+        } while (strlen(op_menu)> 1);
             switch (op_menu[0])
             {
             case '1': // adicionar movel
@@ -303,9 +305,7 @@ int main(void)
                 printf("Digite uma opcao valida....");
                 break;
             }
-        }
-        else printf("Digite uma opcao valida...");
-    } while (op_menu[0] != '8' && settings_options(op_menu) != 1);
+    } while (op_menu[0] != '8');
     printf("Programa encerrado");
     return 0;
 }

@@ -53,13 +53,13 @@ Setor* lista_setor_busca(char nome[], Setor* lista){
 Setor* lista_setor_remove(Setor* lista, char nome[]){ 
 	Setor *anterior = NULL; 
     Setor *p = lista;
-    while(strcmp(p->nome, nome) !=0){
-    	if (p==NULL){
+    while(strcmp(p->nome, nome)!=0){
+        anterior = p;
+        p = p->proximo;
+        if (p==NULL){
             printf("Setor nao encontrado\n");
         	return lista;
         }
-        anterior = p;
-        p = p->proximo;
     }
     if (anterior==NULL){
         lista = p->proximo;
