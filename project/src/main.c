@@ -80,6 +80,10 @@ int main(void)
                         }
                         printf("Digite o numero total de estoque:\n");
                         scanf(" %d", &movel_quantidade);
+                        if (movel_quantidade < 0){
+                            printf("valor invalido");
+                            break;
+                        }
                         aux->moveis = lista_movel_adiciona_ordenado(aux->moveis, movel_nome, movel_tipo, movel_preco, movel_quantidade);
                         lista_escrever_no_arquivo(setor, arquivo);
                         break;
