@@ -54,5 +54,3 @@ int settings_options(char *opcao){
     }
     return 0;
 }
-
-
