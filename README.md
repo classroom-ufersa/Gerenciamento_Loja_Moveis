@@ -19,27 +19,30 @@ Esse sistema é capaz de armazenar setores e moveis por meio do uso de Listas en
 
 ## Lista de arquivos
 
-- src
-  - Configs
-    - Settings.c
-    - Settings.h
-  - Moveis
-    - hospede.c
-    - hospede.h
-  - Setores
-    - setores.c
+- project
+  - bin
+    - main.exe
+  - data
+    - DataBase.txt
+  - includes
+    - moveis.h
     - setores.h
-  - DataBase.txt
-  - main.c
+    - settings.h
+  - src
+    - main.c
+    - moveis.c
+    - setores.c
+    - settings.c
+  - gitignore
   - README.md
 
 ## Como executar o projeto
 
 Para executar o projeto, basta compilar o arquivo main.c e executar os seguintes passos no terminal integrado:
 
-    1° Passo: gcc main.c -o main	 
+    1° Passo: gcc main.c -o ../bin/main.exe	 
 
-    2° Passo: ./main
+    2° Passo: ../bin/main.exe
 
 ## Menu principal
 
@@ -178,13 +181,13 @@ Esta função remove um setor da lista de setores, caso o setor não seja encont
 Setor* lista_setor_remove(Setor* lista, char nome[]){ 
 	Setor *anterior = NULL; 
     Setor *p = lista;
-    while(strcmp(p->nome, nome) !=0){
-    	if (p==NULL){
+    while(strcmp(p->nome, nome)!=0){
+        anterior = p;
+        p = p->proximo;
+        if (p==NULL){
             printf("Setor nao encontrado\n");
         	return lista;
         }
-        anterior = p;
-        p = p->proximo;
     }
     if (anterior==NULL){
         lista = p->proximo;
@@ -226,7 +229,7 @@ void lista_movel_imprime(Movel* lista){
 Essa função busca um movel na lista de moveis e retorna o movel caso ele seja encontrado.
 
 ```c
-Movel* lista_movel_busca(Movel* lista, char nome[]){
+Movel *lista_movel_busca(Movel* lista, char nome[]){
 	Movel *p = lista;
 	for(p; p!=NULL; p=p->proximo){
 		if(strcmp(nome, p->nome) == 0){
