@@ -96,15 +96,18 @@ Movel* lista_movel_adiciona_ordenado(Movel* Lista, char nome[], char tipo[], flo
 Esta função remove um movel da lista de moveis, caso o movel não seja encontrado, a função retorna a lista sem alterações.
 
 ```c
-Movel* lista_movel_remove(Movel* lista, char nome[]){
+Movel *lista_movel_remove(Movel* lista, char nome[]){
 	Movel* anterior = NULL; 
     Movel* p = lista;
     while(strcmp(p->nome,nome)!=0){
-    	if (p==NULL){
-        	return lista;
-		}
         anterior = p;
         p = p->proximo;
+		if (p==NULL){
+			printf("Movel nao encontrado\n");
+			settings_press_enter();
+			settings_clear();
+        	return lista;
+		}
     }
     if (anterior==NULL){
         lista = p->proximo;
