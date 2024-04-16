@@ -50,9 +50,9 @@ Para executar o projeto, basta abrir o arquivo main.c no terminal integrado e ex
 - Adicionar móvel
 - Remover móvel
 - Editar móvel
-- Adicionar Setor
-- Remover Setor
-- Listar setores e móveis
+- Adicionar novo setor
+- Remover setor existente
+- Listar todos os setores e móveis
 - Buscar móvel
 - Sair
 
