@@ -2,7 +2,7 @@
 
 void settings_menu(void){
     
-    printf("\t\tMENU PRINCIPAL.\n");
+    printf("\t\tMENU PRINCIPAL\n");
     printf("***************************\n");
     printf("1-Adicionar Movel\n");
     printf("2-Remover Movel\n");
