@@ -1,7 +1,8 @@
 # Gerenciamento_Loja_Moveis
 
-Sistema criado para o gerenciamento de uma loja de moveis: 
-Esse sistema é capaz de armazenar setores e moveis por meio do uso de Listas encadeadas. É criada uma lista encadeada de setores, e dentro dessa lista é criada uma de móveis fazendo uma conexão entre ambos. O usuario é capaz de adicionar, remover, editar e buscar um movel especifico dentro de cada setor criado além de adicionar e remover esses setores.
+Sistema criado para o gerenciamento de uma loja de móveis: 
+
+Este sistema é capaz de armazenar setores e móveis por meio do uso de listas encadeadas interligadas. É criada uma lista encadeada de setores, onde cada nó dessa lista contém uma lista encadeada de móveis, estabelecendo uma conexão entre ambos. O usuário é capaz de adicionar, remover, editar e buscar um móvel específico dentro de cada setor criado, além de adicionar e remover esses setores.
 
 ## Topicos
 
@@ -38,7 +39,7 @@ Esse sistema é capaz de armazenar setores e moveis por meio do uso de Listas en
 
 ## Como executar o projeto
 
-Para executar o projeto, basta compilar o arquivo main.c e executar os seguintes passos no terminal integrado:
+Para executar o projeto, basta abrir o arquivo main.c no terminal integrado e executar os seguintes passos:
 
     1° Passo: gcc main.c -o ../bin/main.exe	 
 
