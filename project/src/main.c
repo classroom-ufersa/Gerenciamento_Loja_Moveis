@@ -165,6 +165,7 @@ int main(void)
                 settings_captalize(setor_nome);
                 aux = lista_setor_busca(setor_nome, setor);
                 if (aux == NULL){
+                    settings_clear();
                     break;
                 }
                 /*if (setor_nome == 0){
