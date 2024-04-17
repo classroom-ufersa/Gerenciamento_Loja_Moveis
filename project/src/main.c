@@ -168,9 +168,6 @@ int main(void)
                     settings_clear();
                     break;
                 }
-                /*if (setor_nome == 0){
-                    break;
-                }*/
                 lista_movel_imprime(aux->moveis);
                 printf("\nDigite o nome do movel que deseja editar:");
                 char nome_movel_editar[Max];
