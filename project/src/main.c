@@ -176,18 +176,20 @@ int main(void)
             if (aux == NULL)
             {
                 settings_clear();
+                printf("Setor nao encontrado\n");
                 break;
             }
             lista_movel_imprime(aux->moveis);
             printf("\nDigite o nome do movel que deseja editar:");
             char nome_movel_editar[Max];
             scanf(" %[^\n]", nome_movel_editar);
-            if (!settings_str_verify(setor_nome))
+            if (!settings_str_verify(nome_movel_editar))
             {
                 printf("Nome invalido\n");
                 break;
             }
             settings_captalize(nome_movel_editar);
+            aux->moveis= lista_movel_busca(aux->moveis, nome_movel_editar);
             if (strcmp(nome_movel_editar, aux->moveis->nome) == 0)
             {
                 settings_clear();
@@ -266,7 +268,6 @@ int main(void)
                 break;
             }
             settings_captalize(setor_nome);
-            printf("Setor removido com sucesso\n");
             if (setor != NULL)
             {
                 setor = lista_setor_remove(setor, setor_nome);
@@ -298,11 +299,11 @@ int main(void)
             }
             printf("\t\tLista de setores\n");
             lista_setor_imprime(setor);
-            printf("\nDigite o nome do setor em que está o móvel: ");
+            printf("\nDigite o nome do setor em que esta o movel: ");
             scanf(" %[^\n]", setor_nome);
             if (!settings_str_verify(setor_nome))
             {
-                printf("Nome inválido\n");
+                printf("Nome invalido\n");
                 break;
             }
             settings_captalize(setor_nome);
@@ -311,34 +312,34 @@ int main(void)
             {
                 if (lista_movel_vazia(aux->moveis))
                 {
-                    printf("Este setor não contém móveis.\n");
+                    printf("Este setor nao contem moveis.\n");
                     break;
                 }
                 lista_movel_imprime(aux->moveis);
-                printf("Digite o nome do móvel que deseja buscar: ");
+                printf("Digite o nome do movel que deseja buscar: ");
                 scanf(" %[^\n]", movel_nome);
                 if (!settings_str_verify(movel_nome))
                 {
-                    printf("Nome inválido\n");
+                    printf("Nome invalido\n");
                     break;
                 }
                 settings_captalize(movel_nome);
                 Movel *movel_encontrado = lista_movel_busca(aux->moveis, movel_nome);
                 if (movel_encontrado != NULL)
                 {
-                    printf("Móvel encontrado\n");
-                    printf("Nome: %s\tTipo: %s\tPreço: %.2f\tQuantidade: %d\n", movel_encontrado->nome, movel_encontrado->tipo, movel_encontrado->preco, movel_encontrado->qtd_estoque);
+                    printf("Movel encontrado\n");
+                    printf("Nome: %s\tTipo: %s\tPreco: %.2f\tQuantidade: %d\n", movel_encontrado->nome, movel_encontrado->tipo, movel_encontrado->preco, movel_encontrado->qtd_estoque);
                     break;
                 }
                 else
                 {
-                    printf("Móvel não encontrado\n");
+                    printf("Movel nao encontrado\n");
                     break;
                 }
             }
             else
             {
-                printf("Setor não encontrado\n");
+                printf("Setor nao encontrado\n");
                 break;
             }
         case '8': // sair
