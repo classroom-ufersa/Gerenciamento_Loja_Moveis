@@ -25,7 +25,7 @@ void settings_limpa_buffer(void);
 
 /**
  * @brief Transforma uma string para maiúsculas.
- * 
+ *
  * @param string A string a ser transformada em maiúsculas.
  */
 void settings_captalize(char *string);
@@ -42,7 +42,7 @@ void settings_press_enter(void);
 
 /**
  * @brief Verifica se a string passada contém apenas caracteres alfanuméricos.
- * 
+ *
  * @param string A string a ser verificada.
  * @return 1 se a string contém apenas caracteres alfanuméricos, 0 caso contrário.
  */
@@ -50,7 +50,7 @@ int settings_str_verify(char *string);
 
 /**
  * @brief Exibe as opções disponíveis e obtém a escolha do usuário.
- * 
+ *
  * @param opcao A string que contém as opções válidas.
  * @return O índice da opção escolhida pelo usuário.
  */
