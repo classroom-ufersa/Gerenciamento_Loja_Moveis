@@ -56,7 +56,6 @@ int main(void)
                     }
                     settings_captalize(setor_nome);
                     aux = lista_setor_busca(setor_nome, setor);
-                    // ESSE IF FOI O QUE ARRUMOU
                     if (aux != NULL)
                     {
                         settings_clear();
